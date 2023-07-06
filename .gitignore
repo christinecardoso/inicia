@@ -1,0 +1,19 @@
+# build artefacts
+_site
+
+# secrets
+.env
+
+# dependecies installed by npm
+node_modules
+
+# logs
+*.log
+report.html
+
+# cache
+.eslintcache
+.stylelintcache
+
+# Local Netlify folder
+.netlify

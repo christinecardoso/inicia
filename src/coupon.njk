@@ -1,0 +1,52 @@
+---
+layout: base
+eleventyNavigation:
+  key: Coupon
+  order: 2
+meta:
+  title: HTL Coupon
+  description: this is the coupon test page.
+---
+
+
+<section class="font-bold">
+  This is the coupon page
+</section>
+
+<section class="mb-8">
+    <h3 class="text-xl font-bold text-blue-800 mb-4">Locations</h3>
+    <ul class="list-disc ml-8">
+        <li><strong>FIU Coral Way</strong> - 10730 SW 24th St, Miami, FL</li>
+        <li><strong>Kendall</strong> - 13600 SW 128th St, Miami, FL</li>
+    </ul>
+</section>
+
+<section class="mb-8">
+    <h3 class="text-xl font-bold text-blue-800 mb-4">Coupon Details</h3>
+    <div class="flex flex-col items-center">
+        <img src="https://coupon.hometownlube.com/assets/0UB_gqd0ql-1800.c1660cc8.jpeg" alt="Coupon" class="max-w-full mb-4">
+
+        <div class="flex justify-center">
+            <a href="https://coupon.hometownlube.com/assets/0UB_gqd0ql-1800.c1660cc8.jpeg" download class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full mr-4">Download to Phone</a>
+            {# <a href="sms:1234567890?body=SAVE20" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full mr-4">Text to Phone</a> #}
+            <!-- Button to toggle the modal -->
+            <div x-data="{ isModalOpen: false }">
+              <!-- Button to open the modal -->
+              <button @click="isModalOpen = true"
+                class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full">
+                Text Coupon
+              </button>
+              {% include "site-modal-2.njk" %}
+            </div>
+
+            {# <button @click="open = open" :aria-expanded="open" aria-controls="tracklist"
+                class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+                Text Coupon
+            </button> #}
+
+            <a href="#" onclick="window.print(); return false;" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full">Print Coupon</a>
+        </div>
+    </div>
+</section>
+
+{% include "site-modal.njk" %}

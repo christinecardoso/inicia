@@ -1,0 +1,30 @@
+<!-- Modal -->
+<div x-show="isModalOpen"
+  x-bind:class="{ 'modal': true, 'modal-open': isModalOpen }"
+  x-bind:aria-expanded="isModalOpen.toString()"
+  style="display: none;">
+
+  <!-- Modal Overlay -->
+  <div x-show="isModalOpen"
+     class="fixed inset-0 flex items-center justify-center bg-black z-50 bg-opacity-50">
+   <!-- Modal Body -->
+   <div class="bg-white w-64 rounded shadow-lg p-4">
+      <!-- Close button -->
+      {# <button @click="isModalOpen = false">Close</button> #}
+      <!-- Close button -->
+      <button @click="isModalOpen = false"
+        class="top-2 right-2 text-gray-600 hover:text-gray-800">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+      <!-- Modal content -->
+      <div class="p-4">
+        {# <p>Modal content goes here... yo</p> #}
+        {% include "site-modal-content.njk" %}
+      </div>
+    </div>
+  </div>
+
+</div>
