@@ -25,8 +25,8 @@ export default defineConfig({
         'apple-touch-icon.png',
       ],
       manifest: {
-        name: '11st-Starter-Kit',
-        short_name: '11st-Starter-Kit',
+        name: 'inicia',
+        short_name: 'inicia',
         description: '11ty, powered by Vite with Tailwind CSS and Alpine.js.',
         scope: '/',
         start_url: '/',
