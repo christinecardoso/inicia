@@ -47,13 +47,13 @@ module.exports = function(config) {
   // Image shortcode config
   let defaultSizesConfig = "(min-width: 1200px) 1400px, 100vw"; // above 1200px use a 1400px image at least, below just use 100vw sized image
 
-  config.addShortcode("image", async function(src, alt, sizes=defaultSizesConfig) {
+  config.addShortcode("image", async function(src, alt, className = "", sizes=defaultSizesConfig) {
 		console.log(`Generating image(s) from:  ${src}`)
     let metadata = await Image(src, {
 			widths: [800, 1500],
-			formats: ["webp", "jpeg"],
-      urlPath: "/images/",
-			outputDir: "./_site/images/",
+			formats: ["webp", "jpeg", "png", "svg"],
+      urlPath: "../assets/images/",
+			outputDir: "./_site/assets/images/",
 			filenameFormat: function (id, src, width, format, options) {
 				const extension = path.extname(src)
 				const name = path.basename(src, extension)
@@ -66,6 +66,7 @@ module.exports = function(config) {
 			sizes,
 			loading: "lazy",
 			decoding: "async",
+      class: className // Add the provided class to the image element
 		};
 
 		return Image.generateHTML(metadata, imageAttributes);
