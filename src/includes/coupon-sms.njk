@@ -1,10 +1,10 @@
-<div x-data="couponForm">
+<div x-data="couponForm" class="text-center">
   <h3 class="text-xl font-bold mb-2">{{ item.button }}</h3>
   <!-- Form to input phone number -->
   <form @submit.prevent="sendCoupon" x-show="!success">
     <label for="phoneNumber" class="block mb-2">{{ item.label }}</label>
 
-    <div class="flex items-center">
+    <div class="flex items-center mx-auto justify-center">
       <input x-model="formattedPhoneNumber" type="text" id="phoneNumber" name="phoneNumber" required
           pattern="\([0-9]{3}\) [0-9]{3}-[0-9]{4}" placeholder="{{ item.placeholder }}"
           class="rounded-l-lg border-t mr-0 border-b border-l text-gray-800 border-gray-200 bg-white px-3 py-2 placeholder-gray-400 text-sm focus:outline-none focus:border-gray-400"
@@ -22,12 +22,13 @@
           </svg>
         </span>
       </button>
+
     </div>
   </form>
 
   <!-- Success page -->
   <div x-show="success" class="text-green-500 text-center mt-2">
       <h2 class="text-2xl font-bold mb-4">Coupon Sent!</h2>
-      <p class="text-gray-600">Thank you for requesting the coupon. Check your phone for the image file.</p>
+      <p class="text-gray-600">Thank you for requesting the coupon. Check your phone.</p>
   </div>
 </div>
