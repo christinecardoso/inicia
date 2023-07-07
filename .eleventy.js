@@ -39,7 +39,7 @@ module.exports = function(config) {
 
   /* --- PLUGINS --- */
 
-  .addPlugin(pluginRss); // just includes absolute url helper function
+  config.addPlugin(pluginRss); // just includes absolute url helper function
   config.addPlugin(eleventyNavigationPlugin);
   config.addPlugin(EleventyVitePlugin, {});
   config.addPlugin(EleventyWebcPlugin, {
