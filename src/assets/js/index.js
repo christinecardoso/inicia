@@ -15,11 +15,12 @@ Alpine.data('banner', function () {
     dismissed: this.$persist(false),
 
     dismiss() {
-      this.show = false;
+      this.isOpen = false;
       this.dismissed = true;
     },
 
     init() {
+      this.show = false;
       if (!this.dismissed) {
         setTimeout(() => {
           this.show = true;
@@ -29,43 +30,90 @@ Alpine.data('banner', function () {
   };
 });
 
-  Alpine.data('couponForm', function () {
-    return {
-      formattedPhoneNumber: '',
-      isValidNumber: true,
-      success: false,
+//banner
+Alpine.data('isOpen', function () {
+  return {
+    init() {
+      if (!this.isOpen) {
+        setTimeout(() => {
+          this.isOpen = true;
+        }, 1500);
+      }
+    },
+  };
+});
 
-      sendCoupon() {
-        // Perform form validation
-        if (!this.isValidPhoneNumber(this.formattedPhoneNumber)) {
-          this.isValidNumber = false;
-          return;
-        }
+Alpine.data('couponForm', function () {
+  return {
+    formattedPhoneNumber: '',
+    isValidNumber: true,
+    success: false,
 
-        // Remove non-digit characters from the formatted phone number
-        const phoneNumber = this.formattedPhoneNumber.replace(/\D/g, '');
+    sendCoupon() {
+      // Perform form validation
+      if (!this.isValidPhoneNumber(this.formattedPhoneNumber)) {
+        this.isValidNumber = false;
+        return;
+      }
 
-        // Perform the necessary logic to send the image file placeholder URL via text message
-        // Here, you can make an AJAX request to a server-side script or use any other method to handle the SMS sending functionality
+      // Remove non-digit characters from the formatted phone number
+      const phoneNumber = this.formattedPhoneNumber.replace(/\D/g, '');
 
-        // Create the click-to-text link
-        const clickToTextLink = document.createElement('a');
-        clickToTextLink.href = `sms:${phoneNumber}?body=SAVE%2020%20today.%20Click%20on%20the%20coupon%20at%20the%20link%20http://coupon.hometownlube.com`;
+      // Perform the necessary logic to send the image file placeholder URL via text message
+      // Here, you can make an AJAX request to a server-side script or use any other method to handle the SMS sending functionality
 
-        // Trigger the click event on the link to open the messaging app
-        clickToTextLink.click();
+      // Create the click-to-text link
+      const clickToTextLink = document.createElement('a');
+      clickToTextLink.href = `sms:${phoneNumber}?body=SAVE%2020%20today.%20Click%20on%20the%20coupon%20at%20the%20link%20http://coupon.hometownlube.com`;
 
-        // Once the SMS is sent, set the `success` property to true to show the success page
-        this.success = true;
-      },
+      // Trigger the click event on the link to open the messaging app
+      clickToTextLink.click();
 
-      isValidPhoneNumber(phoneNumber) {
-        // US phone number validation regex pattern
-        const phoneNumberPattern = /^\(\d{3}\) \d{3}-\d{4}$/;
-        return phoneNumberPattern.test(phoneNumber);
-      },
-    };
-  });
+      // Once the SMS is sent, set the `success` property to true to show the success page
+      this.success = true;
+    },
+
+    isValidPhoneNumber(phoneNumber) {
+      // US phone number validation regex pattern
+      const phoneNumberPattern = /^\(\d{3}\) \d{3}-\d{4}$/;
+      return phoneNumberPattern.test(phoneNumber);
+    },
+  };
+});
+
+
+Alpine.data('emailCouponForm', function () {
+  return {
+    emailInput: '',
+    success: false,
+
+    sendEmailCoupon() {
+      // Perform form validation
+      if (!isValidEmail(this.emailInput)) {
+        this.isValidEmail = false;
+        return;
+      }
+
+      // Perform the necessary logic to send the coupon via email
+      // Here, you can make an AJAX request to a server-side script or use any other method to handle the email sending functionality
+
+      // Once the email is sent, set the 'success' property to true
+      this.success = true;
+    },
+
+    isValidEmail(emailInput) {
+      // US phone number validation regex pattern
+      // Regular expression pattern for email validation
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      // Check if the email matches the pattern
+      return emailPattern.test(emailInput);
+    },
+
+
+  };
+});
+
 
 
 Alpine.start()
