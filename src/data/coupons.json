@@ -1,0 +1,11 @@
+[
+  {
+      "discount": 20,
+      "title": "Any Full-Service Oil Change",
+      "subtitle": "Including Conventional, Full Synthetic, Synthetic Blend Oil Change",
+      "upc": "src/assets/images/htl-upc.png",
+      "imgAlt": "Oil Change Coupon",
+      "expiration": "07/31/2023",
+      "details": "Includes up to 5 quarts of Valvoline motor oil (diesel quarts may vary), filter (prem. extra), lube & maintenance check; plus tax, if applicable. Not valid with same service offers / discounts (including fleet); see store for additional details or restrictions; good only at participating locations. Coupon may only be used once. No cash or credit back. This coupon is not redeemable for cash."
+  }
+]

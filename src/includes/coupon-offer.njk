@@ -1,0 +1,50 @@
+<div x-data="{ isModalOpen: false }" class="text-right">
+  <!-- Info Icon Button -->
+  <button @click="isModalOpen = true" class="text-gray-600 hover:text-gray-800">
+    <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+      <circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="2" fill="transparent" />
+      <text x="50%" y="50%" text-anchor="middle" alignment-baseline="central" font-size="14" fill="currentColor">i</text>
+    </svg>
+  </button>
+
+  <!-- Modal -->
+  <!-- Modal Overlay -->
+  <div x-show="isModalOpen"
+    x-bind:class="{ 'modal': true, 'modal-open': isModalOpen }"
+    x-bind:aria-expanded="isModalOpen.toString()"
+    x-transition:enter="transition ease-out duration-300"
+    x-transition:enter-start="opacity-0"
+    x-transition:enter-end="opacity-100"
+    x-transition:leave="transition ease-in duration-300"
+    x-transition:leave-start="opacity-100"
+    x-transition:leave-end="opacity-0"
+    class="text-left fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+    <!-- Modal Body -->
+    <div x-show="isModalOpen"
+      x-transition:enter="transition ease-out duration-300 transform"
+      x-transition:enter-start="translate-y-full"
+      x-transition:enter-end="translate-y-0"
+      x-transition:leave="transition ease-in duration-300 transform"
+      x-transition:leave-start="translate-y-0"
+      x-transition:leave-end="translate-y-full"
+      class="fixed bottom-0 w-full bg-white rounded-t-lg shadow-lg overflow-hidden">
+
+      <!-- Close Button -->
+      <button @click="isModalOpen = false" class="absolute top-4 right-4 text-gray-600 hover:text-gray-800">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+
+      <!-- Modal Content -->
+      <div class="p-2 md:p-5 mt-2 md:mt-3 mb-2 md:mb-5">
+        <div class="w-full md:w-5/6 flex flex-col mx-auto my-2 md:my-4">
+          <!-- Modal content goes here -->
+          <h2 class="text-lg font-bold mb-2">Offer Details</h2>
+          <p>{{coupon.details}}.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,84 @@
+<div x-data="{ isModalOpen: false }" class="text-right">
+  <!-- Info Icon Button -->
+  <button @click="isModalOpen = true"
+  class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full mr-4">
+  Send via Email
+  </button>
+
+  <!-- Modal -->
+  <!-- Modal Overlay -->
+  <div x-show="isModalOpen"
+    x-transition:enter="transition ease-out duration-300"
+    x-transition:enter-start="opacity-0"
+    x-transition:enter-end="opacity-100"
+    x-transition:leave="transition ease-in duration-300"
+    x-transition:leave-start="opacity-100"
+    x-transition:leave-end="opacity-0"
+    class="text-left fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+    <!-- Modal Body -->
+    <div x-show="isModalOpen"
+      x-transition:enter="transition ease-out duration-300 transform"
+      x-transition:enter-start="translate-y-full"
+      x-transition:enter-end="translate-y-0"
+      x-transition:leave="transition ease-in duration-300 transform"
+      x-transition:leave-start="translate-y-0"
+      x-transition:leave-end="translate-y-full"
+      class="fixed bottom-0 w-full bg-white rounded-t-lg shadow-lg overflow-hidden">
+
+      <!-- Close Button -->
+      <button @click="isModalOpen = false"
+        class="absolute top-4 right-4 text-gray-600 hover:text-gray-800">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+
+      <!-- Modal Content -->
+      <div class="p-2 md:p-5 mt-2 md:mt-3 mb-2 md:mb-5">
+        <div class="w-full md:w-5/6 flex flex-col mx-auto my-2 md:my-4">
+
+
+          {# <div class="flex items-center">
+            <input type="email" placeholder="Enter your email" class="rounded-l-lg border-t mr-0 border-b border-l text-gray-800 border-gray-200 bg-white px-3 py-2 placeholder-gray-400 text-sm focus:outline-none focus:border-gray-400">
+
+            <button class="px-4 py-2 bg-blue-500 text-white font-semibold rounded-r-lg hover:bg-blue-600 focus:bg-blue-600 transition duration-300">
+              <span class="flex items-center">
+                Send
+                <svg class="w-5 h-5 ml-1 transform rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                </svg>
+              </span>
+            </button>
+          </div> #}
+
+          <!-- Modal content goes here -->
+          <div x-data="{ emailCouponForm: { emailInput: '', success: false }, sendEmailCoupon() { // Perform form validation if (!isValidEmail(this.emailCouponForm.emailInput)) { this.emailCouponForm.isValidEmail = false; return; } // Perform the necessary logic to send the coupon via email // Here, you can make an AJAX request to a server-side script or use any other method to handle the email sending functionality // Once the email is sent, set the 'success' property to true this.emailCouponForm.success = true; } }">
+            <h3 class="text-xl font-bold mb-2">Send via Email</h3>
+            <!-- Modal content goes here -->
+            <form @submit.prevent="sendEmailCoupon">
+              <label for="email" class="block">Email Address:</label>
+              <div class="flex items-center">
+                <input type="email" id="email" x-model="emailCouponForm.emailInput" placeholder="Enter your email"
+                class="rounded-l-lg border-t mr-0 border-b border-l text-gray-800 border-gray-200 bg-white px-3 py-2 placeholder-gray-400 text-sm focus:outline-none focus:border-gray-400">
+                <button type="submit" class="px-4 py-2 bg-blue-500 text-white font-semibold rounded-r-lg hover:bg-blue-600 focus:bg-blue-600 transition duration-300">
+                  <span class="flex items-center">
+                    <span class="sr-only">Send</span>
+                    <svg class="w-5 h-5 ml-1 transform rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+              <div x-show="emailCouponForm.success" class="text-green-500 mt-2">
+                Coupon sent successfully!
+              </div>
+            </form>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

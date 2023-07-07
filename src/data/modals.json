@@ -1,0 +1,15 @@
+[
+  {
+      "button": "Send via Text",
+      "content": "coupon-sms.njk",
+      "label": "Enter your Phone Number",
+      "placeholder": "(123) 456-7890"
+  },
+  {
+      "button": "Send via Email",
+      "content": "coupon-email.njk",
+      "label": "Enter your Email",
+      "placeholder": "hi@hometownlube.com"
+
+  }
+]

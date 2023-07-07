@@ -1,0 +1,63 @@
+{% for item in modals %}
+  <!-- Button to toggle the modal -->
+  <div x-data="{ isModalOpen: false }">
+    <!-- Button to open the modal -->
+    <button @click="isModalOpen = true"
+      class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full mt-4 md:mt-0 md:ml-2">
+      {{ item.button }}
+    </button>
+    <!-- Modal -->
+    <div x-show="isModalOpen"
+      x-bind:class="{ 'modal': true, 'modal-open': isModalOpen }"
+      x-bind:aria-expanded="isModalOpen.toString()"
+      style="display: none;">
+
+      <!-- Modal Overlay -->
+      <div x-show="isModalOpen"
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-100"
+        x-transition:leave="transition ease-in duration-300"
+        x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0"
+        class="fixed inset-0 flex items-center justify-center bg-black z-50 bg-opacity-50">
+
+        <!-- Modal Body -->
+        <div x-show="isModalOpen"
+          x-transition:enter="transition ease-out duration-300 transform"
+          x-transition:enter-start="translate-y-full"
+          x-transition:enter-end="translate-y-0"
+          x-transition:leave="transition ease-in duration-300 transform"
+          x-transition:leave-start="translate-y-0"
+          x-transition:leave-end="translate-y-full"
+          class="fixed bottom-0 w-full bg-white rounded-t-lg shadow-lg overflow-hidden">
+
+          <!-- Close button -->
+          <button @click="isModalOpen = false"
+          class="absolute top-4 right-4 text-gray-600 hover:text-gray-800">
+            <span class="sr-only">Close</span>
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+
+          <!-- Modal Content -->
+          <div class="p-2 md:p-5 mt-2 md:mt-3 mb-2 md:mb-5">
+            <div class="w-full md:w-5/6 flex flex-col mx-auto my-2 md:my-4">
+              <!-- Modal content goes here -->
+              {% include item.content %}
+            </div>
+          </div>
+          <!-- END Modal Content -->
+        </div>
+        <!-- END Modal Body -->
+      </div>
+      <!-- END Modal Overlay -->
+
+    </div>
+    <!-- END Modal  -->
+  </div>
+{% else %}
+  <li>This would display if the 'item' collection were empty</li>
+{% endfor %}
