@@ -1,6 +1,7 @@
 [build]
   command = "npm run build"
   publish = "_site"
+  functions = "functions"
 
 [context.production]
   environment = { NODE_VERSION = "18.2.0", RUBY_VERSION = "2.7.1" }
@@ -14,6 +15,10 @@
   port = 5173
   targetPort = 8080
   framework = "#custom"
+
+[[functions]]
+  path = "/sendEmail"
+  command = "node sendEmail.js"
 
 [[headers]]
   for = "/*"

@@ -4,7 +4,7 @@
   "description": "Based on 11ty Rapid Starter. 11ty-alpine-vite-tailwind",
   "main": "index.js",
   "scripts": {
-    "clean": "rimraf _site",
+    "clean": "del-cli _site",
     "prepare": "npx husky install",
     "preview": "npx vite preview",
     "predev": "run-s clean",
@@ -15,7 +15,6 @@
     "prebuild": "run-s clean",
     "build": "cross-env NODE_ENV=production run-s build:*",
     "build:eleventy": "npx @11ty/eleventy",
-    "clean": "del-cli _site",
     "setup": "npm install && npm run validate"
   },
   "keywords": [],
@@ -27,24 +26,24 @@
     "@11ty/eleventy-navigation": "^0.3.5",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
     "@11ty/eleventy-plugin-vite": "^4.0.0",
-    "@tailwindcss/typography": "^0.5.0",
-    "@tailwindcss/aspect-ratio": "^0.4.2",
-    "autoprefixer": "^10.4.14",
     "@babel/cli": "^7.22.6",
     "@babel/core": "^7.22.8",
     "@babel/eslint-parser": "^7.22.7",
     "@babel/preset-env": "^7.22.7",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/typography": "^0.5.0",
+    "autoprefixer": "^10.4.14",
+    "browserslist": "^4.16.6",
+    "cross-env": "^7.0.3",
     "del-cli": "^5.0.0",
     "dotenv": "^16.0.3",
     "husky": "^8.0.3",
     "js-yaml": "^4.1.0",
+    "npm-run-all": "^4.1.5",
     "postcss": "^8.4.21",
     "postcss-cli": "^10.0.0",
-    "npm-run-all": "^4.1.5",
     "rimraf": "^5.0.1",
     "tailwindcss": "^3.3.1",
-    "cross-env": "^7.0.3",
-    "browserslist": "^4.16.6",
     "vite-plugin-pwa": "^0.14.1"
   },
   "dependencies": {
@@ -53,6 +52,7 @@
     "@sindresorhus/slugify": "^2.2.0",
     "alpinejs": "^3.12.0",
     "core-js": "^3.20.2",
-    "lazysizes": "^5.3.2"
+    "lazysizes": "^5.3.2",
+    "nodemailer": "^6.9.3"
   }
 }

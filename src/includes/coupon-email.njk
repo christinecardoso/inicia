@@ -1,7 +1,7 @@
 <div x-data="emailCouponForm" class="text-center">
   <h3 class="text-xl font-bold mb-2">{{ item.button }}</h3>
   <!-- Modal content goes here -->
-  <form @submit.prevent="sendEmailCoupon">
+  <form @submit.prevent="sendEmailCoupon" action="/.netlify/functions/sendEmail" method="POST">
     <label for="email" class="block mb-2">{{ item.label }}</label>
 
     <div class="flex items-center mx-auto justify-center">
