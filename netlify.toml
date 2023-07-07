@@ -3,10 +3,10 @@
   publish = "_site"
 
 [context.production]
-  environment = { NODE_VERSION = "16.13.2", RUBY_VERSION = "2.7.1" }
+  environment = { NODE_VERSION = "18.2.0", RUBY_VERSION = "2.7.1" }
 
 [context.deploy-preview]
-  environment = { NODE_VERSION = "16.13.2", RUBY_VERSION = "2.7.1" }
+  environment = { NODE_VERSION = "18.2.0", RUBY_VERSION = "2.7.1" }
 
 [dev]
   command = "npm run dev"
@@ -14,11 +14,6 @@
   port = 5173
   targetPort = 8080
   framework = "#custom"
-
-[[redirects]]
-  from = "/*"
-  to = "/404/"
-  status = 404
 
 [[headers]]
   for = "/*"
