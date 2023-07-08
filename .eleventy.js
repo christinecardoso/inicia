@@ -17,6 +17,9 @@ const globalSiteData = {
   baseUrl: baseUrl,
 }
 
+// Import filters
+const absoluteUrl = require('./11ty/filters/absoluteUrl.js');
+
 module.exports = function(config) {
 
   /* --- GLOBAL DATA --- */
@@ -79,14 +82,14 @@ module.exports = function(config) {
   // Output year for copyright notices
   config.addShortcode("year", () => `${new Date().getFullYear()}`);
 
-
   /* --- FILTERS --- */
+
+  config.addFilter('absoluteUrl', absoluteUrl);
 
   // Custom Random Helper Filter (useful for ID attributes)
   config.addFilter("generateRandomIdString", function (prefix) {
     return prefix + "-" + Math.floor(Math.random() * 1000000);
   });
-
 
   config.setServerOptions({
     // Default values are shown:
