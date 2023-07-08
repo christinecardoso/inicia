@@ -16,8 +16,9 @@ meta:
 <section class="mb-8">
     <h3 class="text-xl font-bold text-blue-800 mb-4">Locations</h3>
     <ul class="list-disc ml-8">
-        <li><strong>FIU Coral Way</strong> - 10730 SW 24th St, Miami, FL</li>
-        <li><strong>Kendall</strong> - 13600 SW 128th St, Miami, FL</li>
+      {% for store in stores %}
+        <li><strong>{{ store.name }}</strong> - {{ store.address }} - {{ store.phone }}</li>
+      {% endfor %}
     </ul>
 </section>
 {# <div class="h-64 bg-gradient-to-b from-blue-900 via-blue-800 to-blue-700"></div> #}
