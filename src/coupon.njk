@@ -7,22 +7,13 @@ meta:
   title: HTL Coupon
   description: this is the coupon test page.
 ---
-
-
-<section class="font-bold">
-  This is the coupon page
-</section>
-
 <section class="mb-8">
-    <h3 class="text-xl font-bold text-blue-800 mb-4">Locations</h3>
-    <ul class="list-disc ml-8">
-      {% for store in stores %}
-        <li><strong>{{ store.name }}</strong> - {{ store.address }} - {{ store.phone }}</li>
-      {% endfor %}
-    </ul>
-</section>
-{# <div class="h-64 bg-gradient-to-b from-blue-900 via-blue-800 to-blue-700"></div> #}
+  <h1 class="text-lg font-bold">Valvoline Instant Oil Change</h1>
+  <h2 class="text-2xl font-bold">Smooth Rides Start with Fresh Oil</h2>
 
+
+  <p class="text-base">Get hassle-free oil changes in just 10 minutes at Hometown Lube! Stay in your car as our expert technicians take care of everything. No appointment needed! Witness the job done right before your eyes and hit the road with confidence. Experience convenience and speed at Hometown Lube, your trusted destination for quick oil changes.</p>
+</section>
 <section class="mb-8">
     <h3 class="text-xl font-bold text-blue-800 mb-4">Available Coupons</h3>
       {% for coupon in coupons %}
@@ -54,4 +45,37 @@ meta:
     {% endfor %}
 </section>
 
-{% include "site-modal.njk" %}
+<section class="mb-8">
+    <h3 class="text-xl font-bold text-blue-800 mb-4">Locations</h3>
+    <p>Just drive on in.</p>
+    <ul class="flex list-disc ml-8 justify-between">
+      {% for store in stores %}
+        <li class="w-50">
+          <h3>{{ store.name }}</h3>
+          <p>{{ store.address }}</p>
+          <p>{{ store.phone }}</p>
+          <a
+            class="text group mt-8 inline-flex h-9 flex-none items-center whitespace-nowrap rounded-full bg-blue-500 hover:bg-blue-600 py-5 px-3 font-semibold text-white hover:bg-red-light md:ml-10 md:mt-0"
+            target="_blank"
+            href="{{ store.gmap }}"
+          >
+            <span class="pl-4"
+              >Get Directions
+              <i class="im-arrow-right pl-2 font-icomoon text-lg"></i>
+            </span>
+          </a>
+
+        </li>
+      {% endfor %}
+    </ul>
+</section>
+<h2 class="text-xl font-bold text-blue-800 mb-4">Why Hometown Lube</h2>
+<ul>
+{% for benefit in htlBenefits.items %}
+<h3 class="font-bold text-base">{{ benefit.text }}</h3>
+<p class="text-sm">{{ benefit.desc }}</p>
+{% endfor %}
+</ul>
+
+<p class="text-base mt-5">For questions, comments or problems with this page, please <a class="text-blue-500 hover:text-blue-600" href="{{'/contact/' | url | absoluteUrl(site.baseUrl) }}">Contact Us</a></p>
+{# <div class="h-64 bg-gradient-to-b from-blue-900 via-blue-800 to-blue-700"></div> #}

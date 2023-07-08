@@ -1,0 +1,31 @@
+{
+  "title" : "It's about time for an oil change at Hometown Lube Miami",
+  "store_sufix": "",
+  "items": [
+    {
+      "text": "Convenient Drive-Thru Oil Changes in Miami",
+      "desc": "Best drive-thru, stay-in-your-car oil changes in Miami since 1962. In and out in 15 minutes. Improve performance and engine life with our skilled, expert, speedy oil change.",
+      "icon": "im-flash"
+    },
+    {
+      "text": "Speedy Oil & Filter Change",
+      "desc": "Fast high quality service for any type of car or oil. No need to get out of your car we offer drive through service.",
+      "icon": "im-flash"
+    },
+    {
+      "text": "Inspecting Tires & Belts",
+      "desc": "We'll make sure your tires and belts are ready for Miami driving.",
+      "icon": "im-car-wheel"
+    },
+    {
+      "text": "Fluid Top-Off",
+      "desc": "We'll refill your windshield washer spray, etc. So you're ready to roll.",
+      "icon": "im-chemical-4"
+    },
+    {
+      "text": "Stay Hydrated",
+      "desc": "Ask our staff for a complimentary bottle of water or soft drink while you wait for your oil change.",
+      "icon": "im-glass-water"
+    }
+  ]
+}
