@@ -3,7 +3,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 <title>{{ site.title }} - {{ title or meta.title }}</title>
 
-<link rel="canonical" href="{{ page.url | url | absoluteUrl }}" />
+<link rel="canonical" href="{{ page.url | url | absoluteUrl(site.baseUrl) }}" />
 
 {# We use eleventy-rss plugin absoluteUrl filter as helper for absolute URL generation #}
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -22,7 +22,7 @@
 <meta property="og:title" content="{{ meta.title or site.title }}">
 <meta property="og:type" content="website" />
 <meta property="og:description" content="{{ meta.description or site.description }}">
-<meta property="og:url" content="{{ page.url | url | absoluteUrl }}">
+<meta property="og:url" content="{{ page.url | url | absoluteUrl(site.baseUrl) }}">
 <meta property="og:locale" content="{{  meta.locale or site.locale }}">
 
 {%- if meta.image -%}
