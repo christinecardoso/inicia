@@ -55,7 +55,7 @@ module.exports = function(config) {
 		console.log(`Generating image(s) from:  ${src}`)
     let metadata = await Image(src, {
 			widths: [800, 1500],
-			formats: ["webp", "jpeg", "png", "svg"],
+			formats: ["webp", "png", "svg"],
       urlPath: "../assets/images/",
 			outputDir: "./_site/assets/images/",
 			filenameFormat: function (id, src, width, format, options) {
