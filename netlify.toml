@@ -16,10 +16,6 @@
   targetPort = 8080
   framework = "#custom"
 
-[[functions]]
-  path = "/sendEmail"
-  command = "node sendEmail.js"
-
 [[headers]]
   for = "/*"
   [headers.values]
