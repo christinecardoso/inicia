@@ -91,6 +91,21 @@ module.exports = function(config) {
     return prefix + "-" + Math.floor(Math.random() * 1000000);
   });
 
+
+  /* --- COLLECTIONS --- */
+  // Define taxonomies
+  config.addCollection("tagsList", function(collection) {
+    const excludedTags = ["post", "travel"];
+    const tagsList = Array.from(
+      new Set(
+        collection
+          .getAll()
+          .flatMap(item => item.data.tags || [])
+          .filter(tag => !excludedTags.includes(tag))
+      )
+    );
+    return tagsList;
+  });
   config.setServerOptions({
     // Default values are shown:
 
