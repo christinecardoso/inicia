@@ -6,9 +6,9 @@
 
   <body class="min-h-screen bg-white" data-env="{{ node.env }}">
 
-    {% include "header.njk" %}
+    {# {% include "header.njk" %} #}
     <div @html="content">
-      <main id="main" tabindex="-1">
+      <main class="" tabindex="-1">
           {{ content | safe }}
       </main>
     </div>
