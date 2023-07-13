@@ -1,0 +1,17 @@
+---
+layout: base
+permalink: /tags/
+eleventyNavigation:
+  key: Tags
+  order: 4
+meta:
+  title: Tags archive
+  description: this is where you can find all our tags.
+---
+<h1 class="font-bold">Tags</h1>
+
+{% for tags in collections.tagsList %}
+  {% set tagSlug %}{{ tags | url | slugify }}{% endset %}
+  {% set tagUrl %}/tags/{{ tagSlug }}/{% endset %}
+  <p class="mb-5"><a href="{{ tagUrl | url }}" class="tag">{{ tags }}</a></p>
+{% endfor %}
