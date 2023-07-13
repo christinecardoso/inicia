@@ -1,7 +1,9 @@
 {
-  "name": "Hometown Lube",
+  "name": "Hometown Lube Valvoline Miami",
+  "title": "Hometown Lube Valvoline Miami",
   "url": "https://inicia.netlify.app",
   "description": "This is a basic 11ty starter template with my most commonly used features and modern tooling",
   "locale": "en",
-  "logo": "src/assets/images/valvoline-miami-hometown-lube.png"
+  "logo": "src/assets/images/valvoline-miami-hometown-lube.png",
+  "description": "This is a basic 11ty starter template with my most commonly used features and modern tooling"
 }

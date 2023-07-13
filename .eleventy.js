@@ -11,8 +11,6 @@ const baseUrl = process.env.NODE_ENV === 'production' ? 'https://inicia.netlify.
 console.log('baseUrl is set to ...', baseUrl);
 
 const globalSiteData = {
-  title: "11ty Starter Site",
-  description: "This is a basic 11ty starter template with my most commonly used features and modern tooling",
   locale: 'en',
   baseUrl: baseUrl,
 }
