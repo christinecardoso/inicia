@@ -17,7 +17,7 @@ meta:
   <ul>
     {% for post in posts %}
       <li class="">
-        <a class="block text-center rounded-md w-full bg-gray-200 py-4 mb-2 hover:bg-gray-300" href="{{post.url}}">{{ post.data.title }}</a>
+        <a class="block text-center rounded-md w-full bg-gray-200 py-4 mb-2 hover:bg-gray-300" href="{{post.url | url | slugify }}">{{ post.data.title }}</a>
       </li>
     {% endfor %}
   </ul>
