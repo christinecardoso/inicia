@@ -6,4 +6,6 @@
   "locale": "en",
   "logo": "src/assets/images/valvoline-miami-hometown-lube.png",
   "description": "This is a basic 11ty starter template with my most commonly used features and modern tooling",
+  "facebook": "https://www.facebook.com/hometownlube/",
+  "instagram": "https://www.instagram.com/hometownlube/",
 }
