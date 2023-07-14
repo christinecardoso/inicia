@@ -22,7 +22,6 @@ meta:
   <section class="mb-8 z-20 max-w-4xl mx-auto" style="max-width: 56rem;">
       <h3 class="text-xl text-center md:text-left font-bold text-blue-800 mb-4">Available Coupons</h3>
         {% for coupon in coupons %}
-
         <div class="border shadow-lg p-5 flex flex-col bg-white">
             {% include "coupon-offer.njk" %}
             <div class="coup-info mb-4 h-100 flex flex-col md:flex-row justify-center ps-rv">
@@ -36,7 +35,7 @@ meta:
                 <p class="text-base">{{ coupon.subtitle }}</p>
               </div>
             </div>
-            {% image coupon.upc, coupon.imgAlt, "mx-auto" %}
+<picture><source type="image/webp" srcset="data:image/webp;base64,UklGRqwEAABXRUJQVlA4IKAEAAAQJwCdASrgAHYAPm0ulEWkIqIRezesQAbEtLdusDSVv8AOzb+L/g9+znag9p/ar0Pvyv8Tfwl4Bv0C+Rfjp+GXuB/K9+D/hn889uXw7+Kf6X+M/hR9FHkH8A/G7mG/9p/Gf2d9pv4P/DfwV/f//8dYB/D/43/jPtg9zL+H/o/9H/2X9c9k3wd/mfcW/lv8S/zn9u/I/5MOoW/Y8vtQYxQuMC18rb6hwMbWUvwUUIX1RL0hVgf797b6QIwagVNUIlHL5fL5fL5fL5fL5YqUpYfVarVarVaO6ydw0QiEQiEQP97lJcLhcLhcLWS6WH1Wqg2nHHYSh9W/auM2osuxyst8HVek4amGhBOEwDn8t10QIzoJDp38+FdMpaPlOvz3dQfJ5NOShQXoLSHbOqEOCtsXZygSgAt4AjAYDZF/MFbYrwAA/v8KD54YhfeoB7YrK0hgzDEGEk/LFWUeGNiozMlUiaYqyjwwDKluvdMVfmqUgZic9SiimTmcljZMONRRSmf7WLZqamEKrETMTnqUUUwMJsnCIDEdt3Tq0rIjZ4XNUfInH1opk5ck/quY60L8U+a6dQVmprPbvgd/+aIMze6Yq9/9Uk6thIlmbhmZKodcqSNl+sQjOimBhVpEys436rnoiJ2sNZExMlxM+jd61Xl0jOoddgGAKGNwAAAGN/80KSIAB6s3aEHECJS0rRseqB6uwv0+dLIOGWnm7297biIj3b4VcATpBr2MBQLWBeMvyTvF63hmDBJzagBwuGntFSHdT73PgOcUDNladFq9X1uDdW/b62F+4WvRtWn978Q+/RkWo7a7YC86ZvLsfyEPPPf8SMfDsbHKOrbPmuZNxRW+1kXlt4UZtMnE2UapwPi3eN+Mc//0//cdMxS/gxpaWSymgpRH/9LFZgzyPoVl2lKSPmGrrRNSEpHP4hyWiXcSBBE8mizo2zqjnNmZupEZh9qEORbTorLZ1K303uqJkOwRqxTjajQMu504uy+UwnrvsD8VkGOgEKjMN6IU1+4n8yGrCuQGxEcfE/iuq1rEoHqmCrMZT+Qi0HM85NCcD5h4XM/qUovbEf8shaR5mJb32dY7+wL8OS94fNj4X9EBul5YwI2/MPvA7iWL1zVWvuEQjvN5C7t6WYKQf+NKcYkB37wvga50EvawGIHt59HhBI8OIciiz4kOH/+hPRiTRI/srGYzI/xlco0jOwaa8mGNo9DJngpBmNxEQf1wMydQqr2/s7gMxOl06bmFTSJNh6FNC7LUN5w6JzLjec7CsepeWMCNvOv5GnoXZVEU7/rEys9HHmoflRmnJeu+PyHCYFgtrWzJ1ItpzTY+LTTsQsCHRSOU+CEciKaLaP4VOnQa20bNn6HVk548MwnbF4mu8iGII0ZEZbvImFnQIa9le4wNZ8h2tavbk5nL7QwNrHx2H6ZXgyuLQHocMaznvbdHn3V1NN4H7CqsE1e2W95F+V1I1fzkQk/nQr4pPHOpdIyDgvAMs8tLTMPgDL+UxOBLTMPgDL+JH+Uz6F2l6hD0UdscdNCCWe1j47D9Mrp1z7/U+sTQs1WDWp7WXoQ/AVwr74AAAA== 224w" sizes="(min-width: 1200px) 1400px, 100vw"><img alt="Oil Change Coupon" loading="lazy" decoding="async" class="mx-auto" src="data:image/png;base64,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" width="224" height="118"></picture>            {# {% image coupon.upc, coupon.imgAlt, "mx-auto" %} #}
             <p class="text-center text-xs mt-5">Expires on: {{ coupon.expiration }}</p>
             {# <p class="text-center mt-5">Get Coupon</p> #}
         </div>
@@ -65,8 +64,7 @@ meta:
             target="_blank"
             href="{{ store.gmap }}"
           >
-            <span class=""
-              >Get Directions
+            <span class="">Get Directions
               <i class="im-arrow-right pl-2 font-icomoon text-lg"></i>
             </span>
           </a>
