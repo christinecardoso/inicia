@@ -35,7 +35,7 @@ module.exports = function(config) {
   config.addPassthroughCopy('./src/assets/css')
 	config.addPassthroughCopy('./src/assets/js')
   config.addPassthroughCopy('./src/assets/images');
-  config.addPassthroughCopy('./src/assets/public');
+  config.addPassthroughCopy('./public');
 
 
   /* --- PLUGINS --- */
