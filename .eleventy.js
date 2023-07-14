@@ -13,6 +13,11 @@ console.log('baseUrl is set to ...', baseUrl);
 const globalSiteData = {
   locale: 'en',
   baseUrl: baseUrl,
+  envUrls: {
+    development: 'http://localhost:8080',
+    staging: 'http://inicia.tinemaria.com',
+    production: 'https://coupon.hometownlube.com'
+  },
 }
 
 // Import filters
