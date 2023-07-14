@@ -5,7 +5,7 @@
   </head>
 
   <body class="min-h-screen bg-white" data-env="{{ node.env }}">
-
+    {% include "tagmanager.njk" %}
     {# {% include "header.njk" %} #}
     <div @html="content">
       <main class="" tabindex="-1">

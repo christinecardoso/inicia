@@ -8,4 +8,7 @@
   "description": "This is a basic 11ty starter template with my most commonly used features and modern tooling",
   "facebook": "https://www.facebook.com/hometownlube/",
   "instagram": "https://www.instagram.com/hometownlube/",
+  "gtag_old": "AW-952333934",
+  "gtag": "G-R058NEXKT3",
+  "gtag_manager": "GTM-5S8GFP3"
 }
