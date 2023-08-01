@@ -2,6 +2,7 @@
 <html class="leading-tight text-gray-900 antialiased" lang="{{ meta.lang or site.lang }}">
   <head>
     {% include "meta.njk" %}
+    <script src="https://maps.googleapis.com/maps/api/js?key={{site.gmaps}}&callback=initMap" defer></script>
   </head>
 
   <body class="min-h-screen bg-white" data-env="{{ node.env }}">
