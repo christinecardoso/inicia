@@ -2,5 +2,6 @@
   "name": "Inicia",
   "url": "https://inicia.netlify.app",
   "description": "This is a basic 11ty starter template with my most commonly used features and modern tooling",
-  "locale": "en"
+  "locale": "en",
+  "gmaps": "AIzaSyApXjqPtmM7cm78vdnfydAN79k9PNQUpjQ"
 }
