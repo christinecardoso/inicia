@@ -1,0 +1,255 @@
+---
+layout: maplayout
+---
+
+<div class="flex w-full trip-container relative overflow-auto svelte-1if4vr1">
+  <div class="border-r-2 flex-1 md:flex-[0_0_65%] lg:flex-[0_0_55%] xl:flex-[0_0_45%]">
+
+    <div style="padding-bottom: calc(9 / 16 * 100%);" class="bg-black relative">
+      <div class="absolute inset-0 flex items-center justify-center text-white">
+        <h1 class="text-white font-bold">Snorkeling Reefs in the Florida Keys</h1>
+      </div>
+    </div>
+
+    <div class="pt-5 flex justify-between px-3 sm:px-3">
+      <h3 class="text-xl sm:text-2xl font-semibold">Itinerary</h3>
+      <div class="hs-dropdown relative inline-flex [--trigger:click] [--placement:bottom-right]">
+        <button id="hs-dropdown-click-event" type="button" class="hs-dropdown-toggle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="plus-icon"><path d="M18 12.9961H13V17.9961C13 18.2613 12.8946 18.5157 12.7071 18.7032C12.5196 18.8907 12.2652 18.9961 12 18.9961C11.7348 18.9961 11.4804 18.8907 11.2929 18.7032C11.1054 18.5157 11 18.2613 11 17.9961V12.9961H6C5.73478 12.9961 5.48043 12.8907 5.29289 12.7032C5.10536 12.5157 5 12.2613 5 11.9961C5 11.7309 5.10536 11.4765 5.29289 11.289C5.48043 11.1015 5.73478 10.9961 6 10.9961H11V5.99609C11 5.73088 11.1054 5.47652 11.2929 5.28899C11.4804 5.10145 11.7348 4.99609 12 4.99609C12.2652 4.99609 12.5196 5.10145 12.7071 5.28899C12.8946 5.47652 13 5.73088 13 5.99609V10.9961H18C18.2652 10.9961 18.5196 11.1015 18.7071 11.289C18.8946 11.4765 19 11.7309 19 11.9961C19 12.2613 18.8946 12.5157 18.7071 12.7032C18.5196 12.8907 18.2652 12.9961 18 12.9961Z" fill="black"></path></svg></button>
+          <div class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 min-w-[13rem] bg-white shadow-md rounded-lg p-2 mt-2 after:h-4 after:absolute after:-bottom-4 after:left-0 after:w-full before:h-4 before:absolute before:-top-4 before:left-0 before:w-full z-[100] hidden" aria-labelledby="hs-dropdown-click-event" style="">
+            <div class=""><h4 class="affiliate-title svelte-tlhxor">Search Flight</h4> <a class="flex items-center gap-x-2 py-2 px-2 rounded-md text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-zinc-500" target="_blank" rel="nooponer noreferrer" href="https://kayak.com/in?a=kan_267884_578479&amp;lc=en&amp;url=%2Fflights"><img src="/icons/plan/kayak.svg" alt="kayak" class="w-5 h-5 rounded-md"> Kayak</a><a class="flex items-center gap-x-2 py-2 px-2 rounded-md text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-zinc-500" target="_blank" rel="nooponer noreferrer" href="https://www.kiwi.com/deep?adults=2&amp;affilid=sonderbasetechnologieswonderplan&amp;children=2&amp;departure=2023-12-11&amp;destination=PT&amp;pageName=tilesPage&amp;return=2023-12-18&amp;returnFromDifferentAirport=false&amp;returnToDifferentAirport=false"><img src="/icons/plan/kiwi.svg" alt="kiwi" class="w-5 h-5 rounded-md"> Kiwi</a><a class="flex items-center gap-x-2 py-2 px-2 rounded-md text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-zinc-500" target="_blank" rel="nooponer noreferrer" href="https://www.trip.com/flights/welcome/?to=home&amp;Allianceid=3925905&amp;SID=23251005&amp;trip_sub1=&amp;trip_sub3=D88447"><img src="/icons/plan/tripdotcom.svg" alt="tripdotcom" class="w-5 h-5 rounded-md"> Trip.com</a>
+            </div>
+            <div class="border-t border-t-gray-200 mt-3 pt-3">
+              <h4 class="affiliate-title svelte-tlhxor">Search Car Rental</h4> <a class="flex items-center gap-x-2 py-2 px-2 rounded-md text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-zinc-500" target="_blank" rel="nooponer noreferrer" href="https://kayak.com/in?a=kan_267884_578479&amp;lc=en&amp;url=%2Fcars"><img src="/icons/plan/kayak.svg" alt="kayak" class="w-5 h-5 rounded-md"> Kayak</a></div></div></div></div>
+
+        <div class="mt-8 px-3">
+        {% set postCount = 0 %}
+        {% for post in keys %}
+          {% set postCount = postCount + 1 %}
+          <div class="location-div mb-5 p-4 sm:transition-colors rounded-md group cursor-default w-full bg-white border border-gray-200  cursor-pointer" data-marker-id="{{ postCount }}" @mouseover="highlightLocation({{ postCount }})" data-marker-id="{{ post.name | slugify }}">
+            <h2 class="font-bold">{{ post.name }}</h2>
+            <p>{{ post.description }}</p>
+          </div>
+        {% endfor %}
+        </div>
+      </div>
+
+      <div class="map-stack invisible md:visible fixed right-0 md:flex-[0_0_65%] lg:flex-[0_0_55%] xl:flex-[0_0_45%] md:w-[35%] lg:w-[45%] xl:w-[55%]">
+        <div class="map-container invisible md:visible right-0 mt-5 ml-5 mr-5" data-locations="{{ keys | jsonify  }}" x-data="{ locations: {{ keys | jsonify }} }"  x-init="() => initMap(locations)">
+          <div class="map-wrap w-full svelte-57rfco">
+            <div id="map" class="rounded-md map relative w-full h-full sm:h-full svelte-p00lfq maplibregl-map"></div>
+          </div>
+        </div>
+      </div>
+
+</div>
+
+<script>
+// assets/js/map.js
+// Initialize an array to store marker objects
+const markers = [];
+// Define a custom map style that hides markers
+const customMapStyle = [
+  // Your original style configuration
+  {
+    featureType: "all",
+    elementType: "labels.text",
+    stylers: [{ color: "#878787" }],
+  },
+  {
+    featureType: "all",
+    elementType: "labels.text.stroke",
+    stylers: [{ visibility: "off" }],
+  },
+  {
+    featureType: "landscape",
+    elementType: "all",
+    stylers: [{ color: "#f9f5ed" }],
+  },
+  {
+    featureType: "road.highway",
+    elementType: "all",
+    stylers: [{ color: "#f5f5f5" }],
+  },
+  {
+    featureType: "road.highway",
+    elementType: "geometry.stroke",
+    stylers: [{ color: "#c9c9c9" }],
+  },
+  {
+    featureType: "water",
+    elementType: "all",
+    stylers: [{ color: "#aee0f4" }],
+  },
+  // Additional styles to hide specific markers
+  {
+    featureType: "poi",
+    elementType: "labels.icon",
+    stylers: [{ visibility: "off" }],
+  },
+  {
+    featureType: "transit.station",
+    elementType: "labels.icon",
+    stylers: [{ visibility: "off" }],
+  },
+  // You can add more styles here to hide other types of markers
+];
+
+let map; // Declare the map variable in a scope accessible to event listeners
+
+// Define a function to smoothly center the map
+function smoothCenterMap(map, marker, duration, steps) {
+  const startPosition = map.getCenter();
+  const targetPosition = marker.getPosition();
+  const latStep = (targetPosition.lat() - startPosition.lat()) / steps;
+  const lngStep = (targetPosition.lng() - startPosition.lng()) / steps;
+
+  let step = 1;
+
+  function animate() {
+    if (step <= steps) {
+      const newLat = startPosition.lat() + step * latStep;
+      const newLng = startPosition.lng() + step * lngStep;
+      const newCenter = new google.maps.LatLng(newLat, newLng);
+      map.setCenter(newCenter);
+      step++;
+      requestAnimationFrame(animate);
+    }
+  }
+
+  animate();
+}
+
+function initMap(locations) {
+  // locations = {{ keys | jsonify | safe }};
+  // alpineComponent = document.querySelector('.map-container'); // Select the element with the Alpine.js component
+  // locations = alpineComponent.__x.data.locations; // Access the locations variable
+  // locations = document.querySelector('.map-container[data-locations]');
+
+  // Check if locations is defined and has content
+  if (!locations || locations.length === 0) {
+    console.error('No locations data provided');
+    return;
+  }
+
+  // Initialize the map
+  const map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 10,
+    center: { lat: 0, lng: 0 }, // Set your initial map center
+    disableDefaultUI: true, // This turns off all suggested places
+    styles: customMapStyle,
+
+  });
+
+  // Define custom marker icons with different colors
+  const markerIcons = {
+    red: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png',
+    coral: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+    cobalt: 'http://localhost:8080/assets/images/map-marker-cobalt.svg',
+    blue: 'http://localhost:8080/assets/images/map-marker-hpink.svg',
+    green: 'http://localhost:8080/assets/images/map-marker-lime.svg',
+    orange: 'http://localhost:8080/assets/images/map-marker-orange.svg',
+
+    // Add more colors as needed
+  };
+
+  // Create a LatLngBounds object to encapsulate all marker positions
+  const bounds = new google.maps.LatLngBounds();
+
+  // Try to get the user's current location
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function (position) {
+        var userLatLng = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+        };
+
+        // Create a marker for the current location
+        var current = new google.maps.Marker({
+            position: userLatLng, // Default: San Francisco
+            map: map,
+            title: 'Current Location'
+        });
+
+        // Update the marker position to the user's current location
+        // current.setPosition(userLatLng);
+
+        // Center the map on the user's current location
+        map.setCenter(userLatLng);
+    });
+  }
+
+
+  // Add markers for each location and extend bounds
+  locations.forEach((location, index) => {
+    const marker = new google.maps.Marker({
+      position: { lat: location.lat, lng: location.lng },
+      map: map,
+      // Use the specified color or default to red
+      icon: {
+        url: markerIcons[location.color] || markerIcons['blue'], // URL to your SVG marker
+        scaledSize: new google.maps.Size(45, 45), // Specify the size here
+        opacity: 0.7 // Adjust opacity to control transparency
+      }
+    });
+
+    // Extend the bounds to include the marker's position
+    bounds.extend(marker.getPosition());
+
+    // Create and associate an InfoWindow with the marker
+    const infoWindow = new google.maps.InfoWindow({
+      content: location.name // Use the location name here
+    });
+
+    // Add click event listener to center the map on marker click and open InfoWindow
+    // Add click event listener to center the map with smooth animation
+    marker.addListener('click', () => {
+      // map.setCenter(marker.getPosition());
+      const duration = 1000; // Duration in milliseconds
+      const steps = 60; // Number of animation steps
+
+      smoothCenterMap(map, marker, duration, steps);
+      infoWindow.open(map, marker);
+    });
+
+    // Push the marker to the markers array
+    markers.push({ marker, infowindow: infoWindow });
+  });
+
+  // Center and fit the map to the bounds
+  map.fitBounds(bounds);
+}
+
+// Add click event listeners to div elements to open infowindows
+document.querySelectorAll('.location-div').forEach((div, index) => {
+  div.addEventListener('click', () => {
+    // Close all infowindows
+    markers.forEach(markerObj => {
+      markerObj.infowindow.close();
+    });
+    // Open the infowindow for the selected marker
+    markers[index].infowindow.open(map, markers[index].marker);
+  });
+});
+
+// Add mouseover event listeners to div elements to open infowindows on hover
+document.querySelectorAll('.location-div').forEach((div, index) => {
+  div.addEventListener('mouseover', () => {
+    // Close all infowindows
+    markers.forEach(markerObj => {
+      markerObj.infowindow.close();
+    });
+    // Open the infowindow for the selected marker
+    markers[index].infowindow.open(map, markers[index].marker);
+  });
+});
+
+// Add mouseout event listeners to div elements to close infowindows on mouseout
+// document.querySelectorAll('.location-div').forEach((div, index) => {
+//   div.addEventListener('mouseout', () => {
+//     // Close the infowindow when the mouse moves away
+//     markers[index].infowindow.close();
+//   });
+// });
+
+</script>

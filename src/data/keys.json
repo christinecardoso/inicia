@@ -1,0 +1,66 @@
+[
+  {
+    "name": "John Pennekamp Coral Reef State Park",
+    "activity": ["snorkeling"],
+    "lat": 25.1231,
+    "lng": -80.4030,
+    "color": "green",
+    "description": "Renowned for its underwater coral formations and marine life."
+  },
+  {
+    "name": "Molasses Reef",
+    "activity": ["snorkeling"],
+    "lat": 25.0005,
+    "lng": -80.3876,
+    "color": "blue",
+    "description": "Part of the Florida Keys National Marine Sanctuary with diverse marine species."
+  },
+  {
+    "name": "Carysfort Reef",
+    "activity": ["snorkeling"],
+    "lat": 25.2821,
+    "lng": -80.1608,
+    "color": "orange",
+    "description": "Known for elkhorn and staghorn coral formations, and sea turtles."
+  },
+  {
+    "name": "Grecian Rocks",
+    "activity": ["snorkeling"],
+    "lat": 25.0082,
+    "lng": -80.3675,
+    "color": "orange",
+    "description": "Shallow reef system with colorful corals and marine life."
+  },
+  {
+    "name": "Alligator Reef",
+    "activity": ["snorkeling"],
+    "lat": 24.9185,
+    "lng": -80.6274,
+    "color": "orange",
+    "description": "Impressive coral formations and diverse marine species."
+  },
+  {
+    "name": "Mosquito Bay, Key West",
+    "activity": ["bioluminescence viewing"],
+    "lat": 24.5890,
+    "lng": -81.7400,
+    "color": "cobalt",
+    "description": "Known for its bright bioluminescent displays, especially during the summer."
+  },
+  {
+    "name": "Indian Key Channel, Islamorada",
+    "activity": ["bioluminescence viewing"],
+    "lat": 24.9267,
+    "lng": -80.6253,
+    "color": "cobalt",
+    "description": "This area often has bioluminescent plankton, creating a stunning natural light show."
+  },
+  {
+    "name": "Banana Bay, Marathon",
+    "activity": ["bioluminescence viewing"],
+    "lat": 24.7359,
+    "lng": -81.0348,
+    "color": "cobalt",
+    "description": "Another spot where you can witness bioluminescent waters, particularly in the summer and early fall."
+  }
+]
