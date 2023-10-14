@@ -17,4 +17,18 @@
   li.active {
     @apply underline;
   }
+
+  /* Styles for the map container and map-wrap */
+
+  .map-container {
+    flex: 1;
+  }
+
+  .map-wrap {
+    position: relative;
+    overflow: hidden;
+    height: calc(100vh - 14.5em);
+    box-sizing: border-box;
+  }
+
 }
