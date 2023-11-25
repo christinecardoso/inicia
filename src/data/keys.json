@@ -8,12 +8,36 @@
     "description": "Renowned for its underwater coral formations and marine life."
   },
   {
+  "name": "Carysfort Reef",
+  "activity": ["snorkeling"],
+  "lat": 25.1611,
+  "lng": -80.2573,
+  "color": "blue",
+  "description": "Known for its pristine corals and underwater beauty.",
+  "difficulty": "Moderate",
+  "whatToExpect": "Witness stunning coral gardens and a diverse marine environment, including colorful reef fish.",
+  "distanceFromShore": "Approximately 6 miles offshore"
+},
+  {
+  "name": "French Reef",
+  "activity": ["snorkeling"],
+  "lat": 24.9512,
+  "lng": -80.4923,
+  "color": "blue",
+  "description": "Offers diverse marine life and interesting coral formations.",
+  "difficulty": "Moderate",
+  "whatToExpect": "Enjoy a vibrant reef with marine diversity, sponges, and various species of fish.",
+  "distanceFromShore": "Approximately 4 miles offshore"
+},
+  {
     "name": "Molasses Reef",
     "activity": ["snorkeling"],
-    "lat": 25.0005,
-    "lng": -80.3876,
+    "lat": 24.9188,
+    "lng": -80.6206,
     "color": "blue",
-    "description": "Part of the Florida Keys National Marine Sanctuary with diverse marine species."
+    "difficulty": "Moderate",
+    "whatToExpect": "Expect to see vibrant coral formations, colorful fish, and clear waters. Look out for parrotfish, angelfish, and nurse sharks. Approximately 4 miles offshore.",
+    "description": "Part of the Florida Keys National Marine Sanctuary with diverse marine species. Known for beautiful coral gardens and marine life."
   },
   {
     "name": "Carysfort Reef",
@@ -24,20 +48,103 @@
     "description": "Known for elkhorn and staghorn coral formations, and sea turtles."
   },
   {
+  "name": "Horseshoe Reef",
+  "activity": ["snorkeling"],
+  "lat": 24.8647,
+  "lng": -80.6211,
+  "color": "blue",
+  "description": "Features unique underwater structures and marine diversity.",
+  "difficulty": "Moderate",
+  "whatToExpect": "Explore unique reef structures, swim-throughs, and diverse marine life, including groupers and snapper.",
+  "distanceFromShore": "Approximately 3 miles offshore"
+},
+{
+  "name": "Davis Reef",
+  "activity": ["snorkeling"],
+  "lat": 24.9547,
+  "lng": -80.5736,
+  "color": "blue",
+  "description": "Known for its vibrant corals and marine biodiversity.",
+  "difficulty": "Moderate",
+  "whatToExpect": "Discover colorful coral formations, sponges, and a variety of marine species, including parrotfish and angelfish.",
+  "distanceFromShore": "Approximately 3 miles offshore"
+},
+{
+  "name": "Dry Rocks",
+  "activity": ["snorkeling"],
+  "lat": 24.6744,
+  "lng": -81.1507,
+  "color": "blue",
+  "description": "Offers diverse marine life and interesting coral formations.",
+  "difficulty": "Moderate",
+  "whatToExpect": "Experience coral formations and diverse marine species, including colorful fish and sea fans.",
+  "distanceFromShore": "Approximately 5 miles offshore"
+},
+{
+  "name": "Christ of the Deep",
+  "activity": ["snorkeling"],
+  "lat": 25.169500,
+  "lng": -80.376424,
+  "color": "blue",
+  "description": "A famous underwater statue in the John Pennekamp Coral Reef State Park.",
+  "difficulty": "Easy",
+  "whatToExpect": "View the iconic Christ of the Deep statue submerged in clear waters amidst marine life and coral formations. Accessible from the shore, located near John Pennekamp Coral Reef State Park.",
+  "distanceFromShore": "Accessible from the shore"
+},
+  {
     "name": "Grecian Rocks",
     "activity": ["snorkeling"],
-    "lat": 25.0082,
-    "lng": -80.3675,
+    "lat": 25.0187,
+    "lng": -80.3836,
     "color": "orange",
-    "description": "Shallow reef system with colorful corals and marine life."
+    "description": "A shallow reef ideal for snorkelers with colorful marine life.",
+    "difficulty": "Easy",
+    "whatToExpect": "Snorkel in shallower waters with an abundance of coral and tropical fish species.",
+    "distanceFromShore": "Accessible from the shore"
   },
+  {
+  "name": "John Pennekamp Coral Reef State Park",
+  "activity": ["snorkeling"],
+  "lat": 25.1256,
+  "lng": -80.4081,
+  "color": "blue",
+  "description": "Florida's first underwater park with diverse marine ecosystems.",
+  "difficulty": "Easy",
+  "whatToExpect": "Explore diverse coral ecosystems and a variety of marine life, including tropical fish and sea turtles.",
+  "distanceFromShore": "Accessible from the shore"
+},
+  {
+  "name": "Looe Key Reef",
+  "activity": ["snorkeling"],
+  "lat": 24.6148,
+  "lng": -81.4215,
+  "color": "blue",
+  "description": "A renowned marine sanctuary with colorful coral and fish.",
+  "difficulty": "Moderate",
+  "whatToExpect": "Discover a protected marine environment with abundant coral and fish species, including parrotfish and snapper.",
+  "distanceFromShore": "Approximately 5 miles offshore"
+},
+  {
+  "name": "Sombrero Reef",
+  "activity": ["snorkeling"],
+  "lat": 24.6283,
+  "lng": -81.1085,
+  "color": "blue",
+  "description": "Home to diverse marine life and stunning coral formations.",
+  "difficulty": "Moderate",
+  "whatToExpect": "Encounter a variety of coral species and marine life, including colorful parrotfish and angelfish.",
+  "distanceFromShore": "Approximately 7 miles offshore"
+},
   {
     "name": "Alligator Reef",
     "activity": ["snorkeling"],
-    "lat": 24.9185,
-    "lng": -80.6274,
+    "lat": 24.8113,
+    "lng": -80.6635,
     "color": "orange",
-    "description": "Impressive coral formations and diverse marine species."
+    "description": "A historic location with vibrant marine ecosystems. Impressive coral formations and diverse marine species.",
+    "difficulty": "Moderate",
+    "whatToExpect": "Explore a historic reef with coral formations, a variety of fish, and the Alligator Reef Light.",
+    "distanceFromShore": "Approximately 4 miles offshore"
   },
   {
     "name": "Mosquito Bay, Key West",

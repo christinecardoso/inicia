@@ -91,6 +91,24 @@ module.exports = function(config) {
     return prefix + "-" + Math.floor(Math.random() * 1000000);
   });
 
+  config.addFilter("jsonify", function(value) {
+    return JSON.stringify(value);
+  });
+
+  config.addFilter("json", function(value) {
+    return JSON.stringify(value, null, 2);
+  });
+
+  /* --- ServerOptions --- */
+
+  const delayMiddleware = require("@christinecardoso/sapphire/lib/utils/middleware/delay");
+
+  config.setServerOptions({
+    middleware: [delayMiddleware({
+      maxDelayInSeconds: 3,
+      applyFilter: (req) => req.url.endsWith("jpg")
+    })],
+  });
 
   /* --- COLLECTIONS --- */
   // Define taxonomies
