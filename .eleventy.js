@@ -6,6 +6,7 @@ const EleventyWebcPlugin = require('@11ty/eleventy-plugin-webc');
 const Image = require("@11ty/eleventy-img");
 const yaml = require("js-yaml"); // Because yaml is nicer than json for editors
 require('dotenv').config();
+const slugify = require('slugify');
 
 const baseUrl = process.env.NODE_ENV === 'production' ? 'https://inicia.netlify.app' : 'http://localhost:8080';
 console.log('baseUrl is set to ...', baseUrl);
