@@ -59,16 +59,14 @@ p {
 
 .navbar-1 {
   @apply bg-primary-600;
+}
 
-  div {
-    @apply items-center
+.navbar-1 div {
+  @apply items-center
+}
 
-    .logo {
-      a {
-        @apply text-lg font-bold;
-      }
-    }
-  }
+.navbar-1 .logo a {
+  @apply text-lg font-bold;
 }
 
 .sections-hero {
