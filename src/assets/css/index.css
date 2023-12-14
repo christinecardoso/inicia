@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@tailwind variants;
 
 @layer base {
 
@@ -17,4 +18,45 @@
   li.active {
     @apply underline;
   }
+}
+
+.v2,
+.v3 {
+  display: none;
+}
+
+.page-block {
+  @apply mb-4;
+}
+
+h1 {
+  @apply text-4xl md:text-5xl font-bold leading-tight mb-4;
+}
+
+h2 {
+  @apply text-lg md:text-xl text-gray-300 mb-6;
+}
+
+h3 {
+  @apply text-xl font-semibold mb-2;
+}
+
+h4 {
+  @apply text-lg font-semibold mb-1;
+}
+
+p {
+  @apply text-gray-500 text-lg mb-6;
+}
+
+.hero-layout-1 {
+  @apply flex items-center justify-center w-screen overflow-auto p-4;
+}
+
+.hero-color-1 {
+  @apply bg-zinc-600;
+}
+
+.sections-hero {
+  @apply hero-layout-1 hero-color-1 h-[calc(100vh-54px)];
 }
