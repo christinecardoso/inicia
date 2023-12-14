@@ -1,4 +1,5 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
+const colors = require('tailwindcss/colors')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -15,6 +16,8 @@ module.exports = {
         display: ['Oswald', 'ui-serif'], // Adds a new `font-display` class
       },
       colors: {
+        primary: colors.zinc,
+        secondary: colors.slate,
         scheme1: {
           DEFAULT: {
             background: '#3498db',
