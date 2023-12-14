@@ -1,0 +1,8 @@
+// _filters/replaceBusinessName.js
+module.exports = function(content, siteName) {
+  if (!content || !siteName) {
+    return content;
+  }
+
+  return content.replace(/\[Your Business Name\]/g, siteName);
+};
