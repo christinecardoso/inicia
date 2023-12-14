@@ -38,6 +38,7 @@ module.exports = function(config) {
   /* --- PASSTHROUGHS --- */
 
   // Static assets to pass through
+  config.addPassthroughCopy('./src/assets/scss')
   config.addPassthroughCopy('./src/assets/css')
 	config.addPassthroughCopy('./src/assets/js')
   config.addPassthroughCopy('./src/assets/images');
