@@ -1,0 +1,79 @@
+---
+layout: base
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  filter:
+    - all
+    - nav
+    - post
+    - posts
+    - tagList
+    - destinations
+    - activities
+  addAllPagesToCollections: true
+eleventyComputed:
+  title: Tagged “{{ tag }}”
+permalink: /tags/{{ tag | url | slugify }}/
+---
+
+{% block content %}
+
+<div class="container mx-auto">
+  <h1>Tagged “{{ tag }}”</h1>
+
+  {% set posts = collections[tag] %}
+  {% include 'components/postslist.njk' %}
+
+  <p>See <a href="{{ '/tags/' | url }}">all tags</a>.</p>
+</div>
+
+{% endblock %}
+
+{% block schema %}
+  <!-- Your archive page content goes here -->
+
+  <!-- Schema.org JSON-LD markup for CollectionPage -->
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "CollectionPage",
+      "mainEntity": {
+        "@type": "Blog",
+        "name": "{{ site.title }}", // Blog Name
+        "description": "{{ site.description }}",
+        "url": "{{ site.baseUrl }}{{ page.url | url }}",
+        "image": "{{ site.baseUrl }}/path/to/blog-image.jpg"
+      },
+      "about": {
+        "@type": "Organization",
+        "name": "{{ site.title }}",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "{{ site.baseUrl }}/path/to/logo.jpg"
+        }
+      },
+      "headline": "Tag Archive: {{ tag }}",
+      "description": "Archive of blog posts tagged with {{ tag }}.",
+      "datePublished": "",
+      "dateModified": "",
+      "itemListElement": [
+        {% for post in collections.posts %}
+          {
+            "@type": "BlogPosting",
+            "headline": "{{ post.data.title }}",
+            "url": "{{ site.baseUrl }}{{ post.url | url }}",
+            // "datePublished": "{{ post.date.toISOString() }}",
+            // "dateModified": "{{ post.date.toISOString() }}",
+            "author": {
+              "@type": "Person",
+              "name": "{{ post.data.author }}"
+            },
+            "image": "{{ site.baseUrl }}/path/to/post-image.jpg"
+          }{% if not loop.last %},{% endif %}
+        {% endfor %}
+      ]
+    }
+  </script>
+{% endblock %}
