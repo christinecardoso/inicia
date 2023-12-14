@@ -1,4 +1,5 @@
 ---
+title: List of all tags
 layout: base
 permalink: /tags/
 eleventyNavigation:
@@ -8,10 +9,52 @@ meta:
   title: Tags archive
   description: this is where you can find all our tags.
 ---
+
+<div class="container mx-auto">
+<!-- Your tag archive page content goes here -->
 <h1 class="font-bold">Tags</h1>
 
-{% for tags in collections.tagsList %}
-  {% set tagSlug %}{{ tags | url | slugify }}{% endset %}
-  {% set tagUrl %}/tags/{{ tagSlug }}/{% endset %}
-  <p class="mb-5"><a href="{{ tagUrl | url }}" class="tag">{{ tags }}</a></p>
-{% endfor %}
+<div class="card-grid">
+  {% for tag in collections.tagList %}
+    <div class="card card-tag tag tag--{{ tag.name | slug }}">
+      <h2 class="card__title">
+        <a href="{{ site.baseUrl }}{{ tag.permalink | url }}">
+      {{ tag.name }}
+      <span class="card__count count">({{ tag.count }})</span>
+
+      </a>
+    </h2>
+    </div>
+  {% endfor %}
+</div>
+</div>
+
+{% block schema %}
+  <!-- Schema.org JSON-LD markup for ItemList (Tag Archive) -->
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "ItemList",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ site.baseUrl }}{{ page.url | url }}"
+      },
+      "headline": "Tag Archive",
+      "description": "Archive of blog posts by tags",
+      "url": "{{ site.baseUrl }}{{ page.url | url }}",
+      "itemListElement": [
+        {% for tag in collections.tagsList %}
+          {
+            "@type": "ListItem",
+            "position": {{ loop.index }},
+            "item": {
+              "@type": "Thing",
+              "name": "{{ tag }}",
+              "url": "{{ site.baseUrl }}/tags/{{ tag | url | slug }}/"
+            }
+          }{% if not loop.last %},{% endif %}
+        {% endfor %}
+      ]
+    }
+  </script>
+{% endblock %}
