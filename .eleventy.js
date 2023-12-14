@@ -27,6 +27,9 @@ module.exports = function(config) {
 
   config.addGlobalData("site", globalSiteData);
 
+  //allow merging data from multiple data files
+  config.setDataDeepMerge(true);
+
   /* --- YAML SUPPORT --- */
 
   config.addDataExtension("yaml", contents => yaml.load(contents));
@@ -84,8 +87,8 @@ module.exports = function(config) {
   config.addShortcode("year", () => `${new Date().getFullYear()}`);
 
   /* --- FILTERS --- */
-
   config.addFilter('absoluteUrl', absoluteUrl);
+  config.addFilter('replaceBusinessName', require('./11ty/filters/replaceBusinessName'));
 
   // Custom Random Helper Filter (useful for ID attributes)
   config.addFilter("generateRandomIdString", function (prefix) {
@@ -104,20 +107,119 @@ module.exports = function(config) {
     return JSON.stringify(content);
   });
 
-  /* --- COLLECTIONS --- */
-  // Define taxonomies
-  config.addCollection("tagsList", function(collection) {
-    const excludedTags = ["post", "travel"];
-    const tagsList = Array.from(
-      new Set(
-        collection
-          .getAll()
-          .flatMap(item => item.data.tags || [])
-          .filter(tag => !excludedTags.includes(tag))
-      )
-    );
-    return tagsList;
+  // Custom filter to get the last modified date of posts with a specific tag
+  config.addFilter("getLastModifiedDateForTag", function(posts, tag) {
+    let lastModifiedDate = null;
+
+    for (const post of posts) {
+      if (post.data.tags && post.data.tags.includes(tag) && (!lastModifiedDate || post.date > lastModifiedDate)) {
+        lastModifiedDate = post.date;
+      }
+    }
+
+    return lastModifiedDate;
   });
+
+  config.addFilter('htmlDateString', (dateObj) => {
+    const date = new Date(dateObj);
+    const year = date.getUTCFullYear();
+    const month = (date.getUTCMonth() + 1).toString().padStart(2, '0');
+    const day = date.getUTCDate().toString().padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  });
+
+  config.addFilter('readableDate', (dateObj) => {
+    const date = new Date(dateObj);
+    return date.toLocaleDateString('en-US', { day: 'numeric', month: 'short', year: 'numeric' });
+  });
+
+  /* --- COLLECTIONS --- */
+
+config.setDataDeepMerge(true);
+
+  // Define a collection for sections
+// config.addCollection('sections', function(collection) {
+//   return collection.getFilteredByGlob('sections/*.md');
+// });
+  // config.addCollection('posts', function(collection) {
+  //   return collection.getAll();
+  // });
+
+  config.addCollection("sections", function(collectionApi) {
+    return collectionApi.getAll()
+    .filter(item => item.url.includes("/sections/"))
+    .sort((a, b) => {
+      const orderA = a.data.order || 0;
+      const orderB = b.data.order || 0;
+      return orderA - orderB;
+    });
+
+    // Group sections by version
+    const groupedSections = {};
+    sortedSections.forEach(section => {
+      const version = section.data.version || 'default';
+      if (!groupedSections[version]) {
+        groupedSections[version] = [];
+      }
+      groupedSections[version].push(section);
+    });
+
+    return groupedSections;
+  });
+
+  // Define taxonomies
+  // config.addCollection("tagsList", function(collection) {
+  //   const excludedTags = ["post", "travel"];
+  //   const tagsList = Array.from(
+  //     new Set(
+  //       collection
+  //         .getAll()
+  //         .flatMap(item => item.data.tags || [])
+  //         .filter(tag => !excludedTags.includes(tag))
+  //     )
+  //   );
+  //   return tagsList;
+  // });
+  config.addCollection("tagList", collection => {
+    // Initialize an object to store tag counts
+    const tagsObject = {}
+
+    // Iterate through all items in the collection
+    collection.getAll().forEach(item => {
+      // Check if the item has tags
+      if (!item.data.tags) return;
+
+      // Filter out specific tags (e.g., 'post' and 'all') and count the remaining ones
+      const excludedTags = ["post", "all"];
+
+      item.data.tags
+        .filter(tag => !excludedTags.includes(tag))
+        .forEach(tag => {
+          // Generate slugified name
+          const slugifiedName = slugify(tag, { lower: true });
+
+          // Increment tag count in tagsObject
+          if(typeof tagsObject[tag] === 'undefined') {
+            tagsObject[tag] = { count: 1, permalink: slugifiedName };
+          } else {
+            tagsObject[tag].count += 1;
+            tagsObject[tag].permalink = slugifiedName;
+          }
+        });
+    });
+
+    // Convert the tagsObject into an array of objects
+    const tagList = Object.keys(tagsObject).map(tag => ({
+      name: tag,
+      count: tagsObject[tag].count,
+      permalink: `/tags/${tagsObject[tag].permalink}/`,
+    }));
+
+    // Sort the tagList based on tag count in descending order
+    return tagList.sort((a, b) => b.count - a.count)
+
+  });
+
   config.setServerOptions({
     // Default values are shown:
 
