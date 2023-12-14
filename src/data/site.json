@@ -1,7 +1,18 @@
 {
-  "name": "Inicia",
+  "name": "XactNinja",
   "url": "https://inicia.netlify.app",
   "description": "This is a basic 11ty starter template with my most commonly used features and modern tooling",
   "locale": "en",
-  "gmaps": "AIzaSyApXjqPtmM7cm78vdnfydAN79k9PNQUpjQ"
+  "gmaps": "AIzaSyApXjqPtmM7cm78vdnfydAN79k9PNQUpjQ",
+  "meta": {
+    "lang": "en"
+  },
+  "feed": {
+    "subtitle": "Lorem ipsum dolor sit amet consecuteor",
+    "filename": "atom.xml",
+    "path": "/atom.xml",
+    "id": "https://example.com/",
+    "authorName": "John Doe",
+    "authorEmail": "johndoe@example.com"
+  }
 }
