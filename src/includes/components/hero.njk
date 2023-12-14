@@ -1,0 +1,6 @@
+<div class=
+"page-block {{ section.url | slugify }} {% for cssClass in section.data.cssclasses %}{{ cssClass }} {% endfor %}{% if section.data.version %} v{{ section.data.version | slugify }}{% endif %}">
+  <div class="container mx-auto">
+  {{ section.content | safe }}
+  </div>
+</div>
