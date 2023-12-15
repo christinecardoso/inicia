@@ -4,8 +4,15 @@
     <div class="logo">
       <a href="/" class="text-primary-50 hover:text-primary-300 transition duration-300">{{ site.name }}</a>
     </div>
-
-    <div>
+    <!-- Mobile Menu Icon -->
+    <div class="md:hidden">
+      <button id="mobile-menu-button" class="text-primary-50 hover:text-primary-300 focus:outline-none">
+        <!-- Add your mobile menu icon, e.g., hamburger icon -->
+        ☰
+      </button>
+    </div>
+    <!-- Navigation Links -->
+    <div class="hidden md:flex">
       {{ collections.all | eleventyNavigation | eleventyNavigationToHtml({
 
         listElement: "ul",
@@ -26,4 +33,30 @@
       }) | safe }}
     </div>
   </div>
+
+  <!-- Mobile Menu (Hidden by default) -->
+  <div id="mobile-menu" class="md:hidden hidden">
+    {{ collections.all | eleventyNavigation | eleventyNavigationToHtml({
+      listElement: "ul",
+      listItemElement: "li",
+      listClass: "flex flex-col gap-4",
+      listItemClass: "text-primary-50 hover:text-primary-400 transition duration-300",
+      listItemHasChildrenClass: "has-submenu",
+      anchorClass: "block px-4 py-2",
+      activeListItemClass: "active",
+      activeAnchorClass: "active",
+      activeKey: eleventyNavigation.key,
+      showExcerpt: false
+    }) | safe }}
+  </div>
 </header>
+
+<script>
+  // JavaScript to handle mobile menu toggle
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  mobileMenuButton.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
