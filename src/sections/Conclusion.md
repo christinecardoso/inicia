@@ -9,6 +9,6 @@ version: 1
 ---
 _Embrace Excellence: In the spirit of the greats, we invite you to embark on a journey where precision meets passion._
 
-_Your property damage estimates deserve more than accuracy; they deserve mastery. Join us at [Your Estimate Writing Business], where estimates are not just numbers; they're the orchestrators of your success story._
+_Your property damage estimates deserve more than accuracy; they deserve mastery. Join us at [Business Name], where estimates are not just numbers; they're the orchestrators of your success story._
 
-_Crafting Excellence, Estimating Mastery – [Your Estimate Writing Business]_
+_Crafting Excellence, Estimating Mastery – [Business Name]_

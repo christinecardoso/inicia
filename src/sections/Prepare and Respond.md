@@ -8,4 +8,3 @@ order: 6
 version: 1
 ---
 
-## Prepare and Respond

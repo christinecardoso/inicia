@@ -8,8 +8,9 @@ version: 1
 cssclasses:
 ---
 
-# Unlocking Precision and Proficiency: Your Trusted Partner in Property Damage Estimation Mastery
+# Unlocking Precision and Proficiency: Your `Trusted Partner` in Property Damage Estimation Mastery
 
 ## Experience the Power of Accurate Estimates, Crafted by Seasoned Experts with a Proven Track Record
 
-![Hero Image](path/to/hero-image.jpg)
+[Services](#services)
+[Learn more](#learnmore)

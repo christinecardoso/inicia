@@ -10,7 +10,7 @@ eleventyNavigation:
 ---
 #### **Our Transparent Process:**
 
-_Understanding the estimation process shouldn't be a mystery. At [Your Estimate Writing Business], we take pride in demystifying our approach, ensuring you're informed every step of the way._
+_Understanding the estimation process shouldn't be a mystery. At [Business Name], we take pride in demystifying our approach, ensuring you're informed every step of the way._
 
 - **Clear Communication:**
     - Our process begins with open communication. We keep you informed about each stage, ensuring you have a clear understanding of how your estimate is crafted.
@@ -45,7 +45,7 @@ _We understand that entering into the estimation process can raise questions. Le
 
 #### **Your Concerns, Our Priority:**
 
-_Your peace of mind matters to us. If you have specific concerns or questions, our dedicated support team is here to assist you. At [Your Estimate Writing Business], we believe in building lasting relationships through trust, transparency, and unparalleled service._
+_Your peace of mind matters to us. If you have specific concerns or questions, our dedicated support team is here to assist you. At [Business Name], we believe in building lasting relationships through trust, transparency, and unparalleled service._
 
 ### **Ready to Experience Transparent Estimation?**
 
