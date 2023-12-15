@@ -112,11 +112,11 @@ p {
 }
 
 .border-group ol {
-  @apply flex;
+  @apply flex flex-wrap;
 }
 
-.sections-key-services ol > li {
-  @apply border pt-8 p-4 relative;
+.border-group ol > li {
+  @apply lg:flex-1 border pt-8 p-4 relative;
 }
 
 .page-block.split-list ol {
