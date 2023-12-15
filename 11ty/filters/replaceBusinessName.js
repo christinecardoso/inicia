@@ -4,5 +4,5 @@ module.exports = function(content, siteName) {
     return content;
   }
 
-  return content.replace(/\[Your Business Name\]/g, siteName);
+  return content.replace(/\[Business Name\]/g, siteName);
 };
