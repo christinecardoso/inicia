@@ -1,6 +1,6 @@
 <div class=
 "page-block {{ section.url | slugify }} {% for cssClass in section.data.cssclasses %}{{ cssClass }} {% endfor %}{% if section.data.version %} v{{ section.data.version | slugify }}{% endif %}">
-  <div class="container mx-auto">
+  <div class="w-3/4 md:container mx-auto">
   {{ section.content | replaceBusinessName(site.name) | safe }}
   </div>
 </div>
