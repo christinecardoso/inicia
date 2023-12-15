@@ -5,6 +5,7 @@ visual: path/to/hero-image.jpg
 order: 3
 modified: 2023-12-05T14:33:53-05:00
 version: 1
+components: base
 ---
 ## Empower Your Projects with Precision Estimates
 - **Primary Focus:**

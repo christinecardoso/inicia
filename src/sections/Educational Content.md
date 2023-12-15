@@ -7,5 +7,3 @@ version: 1
 ## The Science Behind Our Estimates: How We Ensure Accuracy
 
 Explore the methodologies and technology we use to ensure accurate estimates.
-
-(Objective: Educate clients about our processes, showcasing our expertise and positioning ourselves as industry leaders.)
