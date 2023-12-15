@@ -21,7 +21,9 @@
 }
 
 .v2,
-.v3 {
+.v3,
+.v4,
+.v5 {
   display: none;
 }
 
@@ -71,4 +73,68 @@ p {
 
 .sections-hero {
   @apply hero-layout-1 hero-color-1 h-[calc(100vh-54px)];
+}
+
+.sections-hero h1, .sections-hero h2, .sections-hero a {
+  @apply text-primary-200 font-normal;
+}
+
+.page-block h2 {
+  @apply text-2xl font-normal text-center;
+}
+
+.sections-hero p {
+  @apply absolute bottom-0 right-0 left-0 flex items-end justify-between text-2xl font-bold;
+}
+
+.sections-hero p a {
+  @apply px-8;
+}
+
+.page-block .container ol {
+  @apply flex flex-wrap;
+}
+
+.page-block .container li {
+  @apply flex-1;
+}
+
+.sections-conclusion {
+  @apply h-[calc(100vh-54px)] flex items-center justify-center w-screen overflow-auto p-4;
+}
+
+.sections-conclusion p {
+  @apply text-primary-600;
+}
+
+.sections-introduction-key-details .container > ul {
+  @apply flex-wrap w-full;
+}
+
+.border-group ol {
+  @apply flex;
+}
+
+.sections-key-services ol > li {
+  @apply border pt-8 p-4 relative;
+}
+
+.page-block.split-list ol {
+  @apply flex-none block;
+}
+
+.page-block.split-list ol li {
+  @apply flex w-full pb-5 leading-8;
+}
+
+.split-list strong {
+    @apply text-2xl font-normal;
+}
+
+.split-list ol li > * {
+  @apply flex-1;
+}
+
+.sections-key-services ol > li p strong {
+  @apply absolute top-1 right-1 text-sm leading-3 w-1/2 text-right;
 }
