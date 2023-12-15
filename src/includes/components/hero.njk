@@ -1,6 +1,6 @@
 <div class=
-"page-block {{ section.url | slugify }} {% for cssClass in section.data.cssclasses %}{{ cssClass }} {% endfor %}{% if section.data.version %} v{{ section.data.version | slugify }}{% endif %}">
-  <div class="container mx-auto">
+"selection:bg-primary-900 selection:text-primary-50 page-block {{ section.url | slugify }} {% for cssClass in section.data.cssclasses %}{{ cssClass }} {% endfor %}{% if section.data.version %} v{{ section.data.version | slugify }}{% endif %}">
+  <div class="container md:max-w-2xl lg:max-w-4xl mx-auto">
   {{ section.content | safe }}
   </div>
 </div>
