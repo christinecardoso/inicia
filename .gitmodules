@@ -1,4 +1,0 @@
-[submodule "vault-submodule"]
-	path = content/xactninja
-	url = https://github.com/christinecardoso/vault
-	branch = master
