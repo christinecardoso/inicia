@@ -1,0 +1,5 @@
+[submodule "vault"]
+	path = src/vault
+	url = https://github.com/christinecardoso/vault
+	branch = master
+	ignore = untracked
