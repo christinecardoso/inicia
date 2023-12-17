@@ -91,6 +91,17 @@ module.exports = function(config) {
     return prefix + "-" + Math.floor(Math.random() * 1000000);
   });
 
+  config.addFilter("jsonify", function(value) {
+    return JSON.stringify(value);
+  });
+
+  config.addFilter("prettyJsonify", function(value) {
+  return JSON.stringify(value, null, 2);
+  });
+
+  config.addFilter("json", (content) => {
+    return JSON.stringify(content);
+  });
 
   /* --- COLLECTIONS --- */
   // Define taxonomies
