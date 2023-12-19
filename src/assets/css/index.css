@@ -28,7 +28,7 @@
 .v3,
 .v4,
 .v5 {
-  display: none;
+  display: none !important;
 }
 
 .page-block {
@@ -75,11 +75,11 @@ p {
   @apply text-lg font-bold;
 }
 
-.sections-hero {
+.hero {
   @apply hero-layout-1 hero-color-1 h-[calc(100vh-54px)];
 }
 
-.sections-hero h1, .sections-hero h2, .sections-hero a {
+.hero h1, .hero h2, .hero a {
   @apply text-primary-200 font-normal;
 }
 
@@ -94,11 +94,11 @@ p {
   @apply text-primary-50 text-center;
  }
 
-.sections-hero p {
+.hero p {
   @apply absolute bottom-0 right-0 left-0 flex items-end justify-between text-2xl font-bold;
 }
 
-.sections-hero p a {
+.hero p a {
   @apply px-8;
 }
 
@@ -108,18 +108,6 @@ p {
 
 .page-block .container li {
   @apply flex-1;
-}
-
-.sections-conclusion {
-  @apply h-[calc(100vh-54px)] flex items-center justify-center w-screen overflow-auto p-4;
-}
-
-.sections-conclusion p {
-  @apply text-primary-600;
-}
-
-.sections-introduction-key-details .container > ul {
-  @apply flex-wrap w-full;
 }
 
 .border-group ol {
@@ -146,6 +134,18 @@ p {
   @apply flex-1;
 }
 
-.sections-key-services ol > li p strong {
+.vault-sections-conclusion {
+  @apply h-[calc(100vh-54px)] flex items-center justify-center w-screen overflow-auto p-4;
+}
+
+.vault-sections-conclusion p {
+  @apply text-primary-600;
+}
+
+.vault-sections-introduction-key-details .container > ul {
+  @apply flex-wrap w-full;
+}
+
+.vault-sections-key-services ol > li p strong {
   @apply absolute top-1 right-1 text-sm leading-3 w-1/2 text-right;
 }

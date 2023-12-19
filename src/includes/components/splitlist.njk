@@ -1,4 +1,4 @@
-<div class="mx-auto w-2/3 text-center py-5">
+<div class="{{ section.data.components | slugify }} mx-auto w-2/3 text-center py-5 selection:bg-primary-900 selection:text-primary-50">
   <h2 class="text-4xl font-normal uppercase">{{ section.data.title | replaceBusinessName(site.name) }}</h2>
   <p>{{ section.data.subheadline | replaceBusinessName(site.name) }}</p>
   <p>{{ section.data.description | replaceBusinessName(site.name) }}</p>

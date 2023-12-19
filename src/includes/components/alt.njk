@@ -1,5 +1,5 @@
 <div class=
-"block-alternate panel page-block {{ section.url | slugify }} {% for cssClass in section.data.cssclasses %}{{ cssClass }} {% endfor %}{% if section.data.version %} v{{ section.data.version | slugify }}{% endif %}">
+"block-alternate panel page-block {{ section.data.components | slugify }} {{ section.url | slugify }} {% for cssClass in section.data.cssclasses %}{{ cssClass }} {% endfor %}{% if section.data.version %} v{{ section.data.version | slugify }}{% endif %}">
   <div class="w-3/4 md:container mx-auto">
   {{ section.content | replaceBusinessName(site.name) | safe }}
   </div>

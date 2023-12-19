@@ -1,4 +1,4 @@
-<div class="card-grid">
+<div class="card-grid {{ section.data.components | slugify }} selection:bg-primary-900 selection:text-primary-50">
   {% for post in posts %}
     <div class="card">
       <h3 class="card__title">

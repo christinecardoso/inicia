@@ -1,5 +1,5 @@
 <div class=
-"selection:bg-primary-900 selection:text-primary-50 page-block {{ section.url | slugify }} {% for cssClass in section.data.cssclasses %}{{ cssClass }} {% endfor %}{% if section.data.version %} v{{ section.data.version | slugify }}{% endif %}">
+"page-block {{ section.data.components | slugify }} {{ section.url | slugify }} selection:bg-primary-900 selection:text-primary-50 {% for cssClass in section.data.cssclasses %}{{ cssClass }} {% endfor %}{% if section.data.version %} v{{ section.data.version | slugify }}{% endif %}">
   <div class="container md:max-w-2xl lg:max-w-4xl mx-auto">
   {{ section.content | safe }}
   </div>
