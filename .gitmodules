@@ -1,4 +1,4 @@
-[submodule "content-vault"]
-	path = vault
+[submodule "vault-submodule"]
+	path = src/vault
 	url = https://github.com/christinecardoso/vault
 	branch = master
