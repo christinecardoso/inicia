@@ -4,6 +4,11 @@
   "url": "https://inicia.netlify.app",
   "description": "This is a basic 11ty starter template with my most commonly used features and modern tooling",
   "locale": "en",
+  "baseUrl": {
+    "development": "http://localhost:8080",
+    "production": "https://inicia.netlify.app"
+  },
+  "defaultImgSizes": "(min-width: 1200px) 1400px, 100vw",
   "gmaps": "AIzaSyApXjqPtmM7cm78vdnfydAN79k9PNQUpjQ",
   "meta": {
     "lang": "en"
