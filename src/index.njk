@@ -9,8 +9,13 @@ eleventyNavigation:
   order: 1
 ---
 
-{% for section in collections.sections %}
-  {% set layout = section.data.components | default(sectionDefault) %}
-  {% set templatePath = "components/" + layout + ".njk" %}
-  {% include templatePath %}
+{% block scripts %}
+    <script type="module" src="{{ '/assets/js/swiper-mousewheel.js' | url }}"></script>
+{% endblock %}
+
+{% for folder in collections.folder | reverse %}
+{% set folderVar = folder | slugify %}
+{% set folderLayout = folderVar | default(sectionDefault) %}
+{% set folderTemplatePath = "components/" + folderVar + ".njk" %}
+{% include folderTemplatePath %}
 {% endfor %}

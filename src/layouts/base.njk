@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html class="leading-tight text-gray-900 antialiased" lang="{{ meta.lang or site.lang }}">
+<html data-theme="corporate" class="leading-tight text-gray-900 antialiased" lang="{{ meta.lang or site.lang }}">
   <head>
     {% include "meta.njk" %}
-    <script src="https://maps.googleapis.com/maps/api/js?key={{site.gmaps}}&callback=initMap" defer></script>
+    {# <script src="https://maps.googleapis.com/maps/api/js?key={{site.gmaps}}&callback=initMap" defer></script> #}
   </head>
 
   <body class="min-h-screen bg-white" data-env="{{ node.env }}">
-
     {% include "header.njk" %}
     <div @html="content">
       <main id="main w-fw" tabindex="-1">
@@ -16,5 +15,8 @@
     {# {% include "site-banner.njk" %} #}
     {% include "footer.njk" %}
     <script type="module" src="{{ '/assets/js/index.js' | url }}"></script>
+    {% block scripts %}
+    {% endblock %}
+
   </body>
 </html>

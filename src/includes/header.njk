@@ -1,62 +1,54 @@
-<header class="navbar-1 w-full py-2">
-  <div class="container mx-auto flex justify-between items-center">
-    <!-- Logo -->
-    <div class="logo">
-      <a href="/" class="text-primary-50 hover:text-primary-300 transition duration-300">{{ site.name }}</a>
-    </div>
-    <!-- Mobile Menu Icon -->
-    <div class="md:hidden">
-      <button id="mobile-menu-button" class="text-primary-50 hover:text-primary-300 focus:outline-none">
-        <!-- Add your mobile menu icon, e.g., hamburger icon -->
-        ☰
-      </button>
-    </div>
-    <!-- Navigation Links -->
-    <div class="hidden md:flex">
+<div class="navbar bg-base-100">
+  <div class="navbar-start">
+    <div class="dropdown">
+      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+      </div>
       {{ collections.all | eleventyNavigation | eleventyNavigationToHtml({
-
         listElement: "ul",
         listItemElement: "li",
 
-        listClass: "flex gap-4",
-        listItemClass: "text-primary-50 hover:text-primary-400 transition duration-300",
-
+        listClass: "menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52",
+        listItemClass: "p-2",
         listItemHasChildrenClass: "has-submenu",
-        anchorClass: "block px-4 py-2",
-
+        anchorClass: "block",
         activeListItemClass: "active",
         activeAnchorClass: "active",
 
         activeKey: eleventyNavigation.key,
-        showExcerpt: false
-
+        showExcerpt: false,
+        attributes: {
+          ul: {
+            tabindex: "0"
+          }
+        }
       }) | safe }}
     </div>
+    <a class="btn btn-ghost text-xl">{{ site.name }}</a>
   </div>
-
-  <!-- Mobile Menu (Hidden by default) -->
-  <div id="mobile-menu" class="md:hidden hidden">
+  <div class="navbar-center hidden lg:flex">
     {{ collections.all | eleventyNavigation | eleventyNavigationToHtml({
       listElement: "ul",
       listItemElement: "li",
-      listClass: "flex flex-col gap-4",
-      listItemClass: "text-primary-50 hover:text-primary-400 transition duration-300",
+
+      listClass: "menu menu-horizontal px-1",
+      listItemClass: "p-2",
       listItemHasChildrenClass: "has-submenu",
-      anchorClass: "block px-4 py-2",
+      anchorClass: "block",
       activeListItemClass: "active",
       activeAnchorClass: "active",
+
       activeKey: eleventyNavigation.key,
-      showExcerpt: false
+      showExcerpt: false,
+
+      attributes: {
+        ul: {
+          tabindex: "0"
+        }
+      }
     }) | safe }}
   </div>
-</header>
-
-<script>
-  // JavaScript to handle mobile menu toggle
-  const mobileMenuButton = document.getElementById('mobile-menu-button');
-  const mobileMenu = document.getElementById('mobile-menu');
-
-  mobileMenuButton.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-  });
-</script>
+  <div class="navbar-end">
+    <a class="btn">Get Started</a>
+  </div>
+</div>
