@@ -74,7 +74,31 @@ module.exports = function(config) {
 
   /* --- FILTERS --- */
 
-  config.setLibrary('md', markdownIt().use(markdownItAttrs));
+  config.setLibrary('md', markdownIt({
+      html: true,
+      breaks: true,
+      linkify: true
+    })
+    .use(markdownItAttrs)
+    .use(markdownItEleventyImg, {
+      imgOptions: {
+        widths: [800, 500, 300],
+        urlPath: "/images/",
+        outputDir: path.join("_site", "images"),
+        formats: ["avif", "webp", "jpeg"]
+      },
+      globalAttributes: {
+        class: "markdown-image",
+        decoding: "async",
+        // If you use multiple widths,
+        // don't forget to add a `sizes` attribute.
+        sizes: "100vw"
+      }
+      // Specify options for markdown-it-eleventy-img here
+      // For example:
+      // imgPathTransform: (imgPath) => `./path/to/${imgPath}`
+    })
+  );
 
   //allow merging data from multiple data files
   config.setDataDeepMerge(true);
