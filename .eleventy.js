@@ -7,7 +7,8 @@ const yaml = require("js-yaml"); // Because yaml is nicer than json for editors
 require('dotenv').config();
 const slugify = require('slugify');
 const markdownIt = require("markdown-it");
-const markdownItAttrs = require('markdown-it-attrs');
+const markdownItAttrs = require('markdown-it-attrs')
+const markdownItEleventyImg = require("markdown-it-eleventy-img");
 const { applySharedConfig } = require('@cc/sapphire/lib/index');
 
 // Import filters
