@@ -1,0 +1,31 @@
+{# <div x-data="swiper()" x-init="init" class="section_1">
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide slide01">
+      </div>
+      <div class="swiper-slide slide02">
+      </div>
+      <div class="swiper-slide slide03">
+      </div>
+      <div class="swiper-slide slide04">
+      </div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+  </div>
+</div> #}
+
+{# {% include "components/sections-slider.njk" %} #}
+{% for section in collections.sections %}
+  {% if section.data.folder == folder %}
+    {# {{ section.data.title }} #}
+    {% set layout = section.data.components | default(sectionDefault) %}
+    {% set templatePath = "components/" + layout + ".njk" %}
+    <div class="swiper-slide">
+<div>
+      {% include templatePath %}
+</div>
+    </div>
+
+  {% endif %}
+{% endfor %}

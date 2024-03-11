@@ -1,0 +1,17 @@
+<div class="{{ folderVar }} flex min-h-[100vh] max-w-[100vw] flex-col items-center justify-start xl:flex-row xl:items-start xl:justify-between">
+  <div class="shrink xl:w-1/2">
+    <div class="xl:h-[calc(20vh)]"></div>
+    <div class="max-w-[100vw] px-2 py-10 lg:px-10 xl:max-w-[50vw]">
+  {% for section in collections.sections %}
+    {% if section.data.folder == folder %}
+      {# {{ section.data.title }} #}
+      {% set layout = section.data.components | default(sectionDefault) %}
+      {% set templatePath = "components/" + layout + ".njk" %}
+      {% include templatePath %}
+      <div class="h-40"></div>
+    {% endif %}
+  {% endfor %}
+    </div>
+  </div>
+  {% include "components/mockup.njk" %}
+</div>

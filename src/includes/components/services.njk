@@ -1,10 +1,23 @@
-<div class="{{ section.data.components | slugify }} mx-auto w-1/2 text-center selection:bg-primary-900 selection:text-primary-50">
-<h2 class="text-4xl font-normal uppercase">{{ section.data.title }}</h2>
-<p>{{ section.data.description }}</p>
-</div>
-<div class=
-"page-block {{ section.url | slugify }} {% for cssClass in section.data.cssclasses %}{{ cssClass }} {% endfor %}{% if section.data.version %} v{{ section.data.version | slugify }}{% endif %}">
-  <div class="w-full border-group">
-  {{ section.content | replaceBusinessName(site.name) | safe }}
+<div data-theme="business" class="relative {{ section.data.components | slugify }} selection:bg-primary-900 selection:text-primary-50">
+  <div class=" mx-auto w-3/4 text-left">
+    <div class="custom-bg bg-normal">
+      <div class="custom-bg-top-border bg-accent"></div>
+      <div class="custom-bg-center-border bg-accent"></div>
+      <div class="custom-bg-bottom-border bg-accent">
+        <div class="custom-bg-bar bg-accent custom-bg-bar-bottom custom-bg-bar-size-regular bg-primary"></div>
+      </div>
+    </div>
+    <div class="section-inner">
+      <div class="section-header relative">
+        <h2 class="text-4xl font-normal uppercase">{{ section.data.title }}</h2>
+        <p>{{ section.data.description }}</p>
+      </div>
+      <div class=
+      "relative page-block {{ section.url | slugify }} {% for cssClass in section.data.cssclasses %}{{ cssClass }} {% endfor %}{% if section.data.version %} v{{ section.data.version | slugify }}{% endif %}">
+        <div class="w-full border-group">
+        {{ section.content | replaceBusinessName(site.name) | safe }}
+        </div>
+      </div>
+    </div>
   </div>
 </div>

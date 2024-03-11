@@ -1,0 +1,25 @@
+{# <div class="hero-bg hero-home-bg isLoaded bg-gradient-to-br from-accent to-transparent via-green via-secondary to-primary absolute left-0 top-negative-140 w-full h-670 z-0 transition-all duration-300 cubic-bezier(.175,.885,.32,1.275) overflow-hidden rounded-lg transform -rotate-3">
+	<canvas id="gradient-canvas" style="opacity: 1;width: 105%;
+    height: 105%;
+    transform: translate(-2.5%,-2.5%);" width="1303" height="600" class="isLoaded"></canvas>
+</div> #}
+
+<div class="gallery">
+	<div class="swiper">
+		<div class="swiper-wrapper">
+			{% for section in collections.sections %}
+		    {% if section.data.folder == folder %}
+		      {# {{ section.data.title }} #}
+		      {% set layout = section.data.components | default(sectionDefault) %}
+		      {% set templatePath = "components/" + layout + ".njk" %}
+		      <div class="swiper-slide">
+		        {% include templatePath %}
+		      </div>
+		    {% endif %}
+		  {% endfor %}
+		</div>
+	</div>
+	<div id="currentSlide" class="text-bold text-center bg-gray-300 rounded-full w-32 p-5 mt-20 mx-auto">
+		1
+	</div>
+</div>

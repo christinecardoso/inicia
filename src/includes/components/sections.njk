@@ -1,0 +1,10 @@
+<div class="{{ folderVar }} relative">
+  {% for section in collections.sections %}
+    {% if section.data.folder == folder %}
+      {# {{ section.data.title }} #}
+      {% set layout = section.data.components | default(sectionDefault) %}
+      {% set templatePath = "components/" + layout + ".njk" %}
+      {% include templatePath %}
+    {% endif %}
+  {% endfor %}
+</div>
