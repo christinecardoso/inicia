@@ -10,6 +10,7 @@ const markdownIt = require("markdown-it");
 const markdownItAttrs = require('markdown-it-attrs')
 const markdownItEleventyImg = require("markdown-it-eleventy-img");
 const { applySharedConfig } = require('@cc/sapphire/lib/index');
+const daisyui = require('daisyui');
 
 // Import filters
 require('@cc/sapphire/lib');
