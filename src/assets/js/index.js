@@ -3,9 +3,17 @@ import '../css/index.css';
 import Alpine from 'alpinejs'
 import persist from '@alpinejs/persist';
 import slugify from '@sindresorhus/slugify';
+// core version + navigation, pagination modules:
+import Swiper from 'swiper';
+import { Navigation, Pagination, Scrollbar } from 'swiper/modules';
+// import Swiper and modules styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/all';
+// import './gsap-swipper';
 
-window.Alpine = Alpine
-Alpine.plugin(persist);
 
 // Add Alpine extensions here
 //banner
@@ -119,6 +127,23 @@ Alpine.data('emailCouponForm', function () {
 Alpine.start()
 
 const env = document.querySelector('body').dataset.env;
+
+// Listen for scroll events on the window
+window.addEventListener('scroll', () => {
+  try {
+    // Update Swiper on scroll
+    // Update Swiper on scroll
+    if (window.swiper) {
+      window.swiper.update();
+    }
+    if (window.Alpine && window.Alpine.discoverComponents) {
+      window.Alpine.discoverComponents();
+    }
+  } catch (error) {
+    console.error('Error updating Swiper on scroll: ', error);
+  }
+});
+
 
 // Check that service workers are supported
 if ('serviceWorker' in navigator && env === 'production') {
