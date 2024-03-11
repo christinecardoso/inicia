@@ -1,0 +1,250 @@
+body {
+  overscroll-behavior: none;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/*! Base css: https://assets.codepen.io/573855/lr-codepen-base.css */
+.swipe-section {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: visible;
+}
+
+.swipe-section .panel {
+  position: absolute;
+  height: 100vh;
+}
+
+.vh-200 {
+  height: 500vh !important;
+}
+
+.test {
+  height: 200vh;
+  text-align: center;
+  font-size: 40px;
+  padding: 5rem;
+}
+
+:root {
+    /* --bg-color: #fff;
+    --text-color: #1d1d1f;
+    --link-color: #f47f5e;
+    --link-hover-color: #bd5033; */
+    --text-spacing: 1.5em;
+    --spacing: min(max(calc(1.3636363636vw + 0.5rem), 0.75rem), 1.5rem);
+}
+
+a {
+    transition: color .2s ease-in-out;
+}
+
+/*! Gsap Default Styles */
+.viewport-wrapper {
+    height: auto;
+    overflow: visible;
+    position: relative;
+}
+
+.content-scroll {
+    display: block;
+    width: 100%;
+}
+
+.content-scroll main {
+    min-height: 100lvh;
+}
+
+/*! Gsap Styles when using ScrollSmoother */
+body:not(.normalize-scroll) .viewport-wrapper {
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+}
+
+body:not(.normalize-scroll) .content-scroll {
+    overflow: visible;
+    will-change: transform;
+}
+
+/*! Fix Flickering */
+body:not(.is-touch) .pin-spacer .wrapper {
+    transform: scale(1.001);
+}
+
+[id*=gsap_swiper] {
+    --slide-aspect-ratio: 8/5;
+    --column-gap: var(--spacing);
+    --col-width: 0.5;
+    --md-col-width: 0.91;
+    --sm-col-width: 0.91;
+}
+
+[id*=gsap_swiper]+[id*=gsap_swiper] {
+    margin-top: calc(var(--spacing) * 6);
+}
+
+/*! Scrub mode */
+[data-scrub] {
+    min-height: 100lvh;
+}
+
+/*! Swiper */
+.media-container picture,
+.content-scroll .swiper-slide {
+  @apply aspect-[var(--slide-aspect-ratio)]
+}
+
+.content-scroll .swiper-slide {
+    -webkit-backface-visibility: hidden;
+    min-width: calc(75rem * var(--col-width, .5));
+    -webkit-transform-style: preserve-3d;
+    width: calc(75rem * var(--col-width, .5));
+}
+
+.content-scroll .swiper-slide>* {
+    padding: 0 var(--column-gap);
+}
+
+.swiper-column-gap {
+    border: 0;
+    height: .0625rem;
+    margin: -.0625rem calc(-1 * var(--column-gap));
+    overflow: hidden;
+    padding: 0;
+    pointer-events: none;
+    position: absolute;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    width: var(--column-gap);
+}
+
+/*! The following styles are utilized solely for illustrative examples. */
+.intro-wrapper {
+    margin-left: var(--swiper-intro-margin-left, 0);
+    max-width: var(--swiper-intro-width, 100%);
+    padding: 0 var(--spacing) calc(var(--spacing) * 3) 0;
+    padding-bottom: calc(var(--spacing) * 3);
+    width: 100%;
+}
+
+.intro-wrapper .text-container {
+    max-width: 70ch;
+}
+
+.intro-wrapper .text-container h2 {
+    font-weight: 500;
+}
+
+.card-text-content {
+    padding: var(--spacing) 0;
+}
+
+.card-text-content .title {
+    font-size: 1.776889rem;
+    font-size: min(max(1.35043564rem, 4.42645336vw), 1.776889rem);
+    font-weight: 500;
+    margin-bottom: calc(var(--text-spacing) * .9);
+}
+
+.card-text-content .title a {
+    text-decoration: none;
+}
+
+.card-text-content a.read-more-dots {
+    font-size: 2.368593037rem;
+    font-size: min(max(1.8001307081rem, 4.5684623289vw), 2.368593037rem);
+    font-weight: 500;
+    letter-spacing: .025em;
+    margin-top: calc(var(--text-spacing) * -.25);
+    text-decoration: none;
+}
+
+.card-text-content a.read-more-dots:before {
+    content: "...";
+}
+
+.dummy-block {
+    align-items: center;
+    display: grid;
+    height: 100lvh;
+    justify-items: center;
+    place-items: center;
+    text-align: center;
+}
+
+.dummy-block h2,
+.dummy-block h3 {
+    font-weight: 500;
+}
+
+.dummy-block .text-container :is(h2, h3) {
+    margin-bottom: 0;
+}
+
+.clamp-1 {
+    -webkit-box-orient: vertical;
+    /*! autoprefixer: off */
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    overscroll-behavior: none;
+    visibility: visible;
+    word-wrap: break-word;
+}
+
+.clamp-1,
+.clamp-2 {
+    -webkit-hyphens: none !important;
+    hyphens: none !important;
+    white-space: normal !important;
+}
+
+.clamp-2 {
+    -webkit-box-orient: vertical;
+    /*! autoprefixer: off */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    overscroll-behavior: none;
+    visibility: visible;
+    word-wrap: break-word;
+}
+
+@media (max-width:48.04875em) {
+    .swiper-slide {
+        min-width: calc(100% * var(--md-col-width, .5));
+        width: calc(100% * var(--md-col-width, .5));
+    }
+
+    .intro-wrapper {
+        margin-left: 0;
+        max-width: 100%;
+        padding: 0 var(--spacing) calc(var(--spacing) * 3) var(--spacing);
+    }
+}
+
+@media (max-width:36.04875em) {
+    .swiper-slide {
+        min-width: calc(100% * var(--sm-col-width, .5));
+        width: calc(100% * var(--sm-col-width, .5));
+    }
+}
+
+/* @media (hover:hover) and (pointer:fine) {
+    a:hover {
+        color: var(--link-hover-color);
+    }
+
+    a:active:not(:hover) {
+        color: var(--link-color);
+    }
+} */
